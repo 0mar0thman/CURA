@@ -70,5 +70,3 @@ The interface follows a **“Structural Editorial”** approach – a premium, g
 - **No build step** – Pure static HTML/CSS/JS, ready to deploy on any static hosting.
 
 ---
-
-## Project Structure
