@@ -60,13 +60,3 @@ The interface follows a **“Structural Editorial”** approach – a premium, g
 - **Colour** – Botanical greens (`#005145`, `#006b5c`) and medicinal blues (`#2b4cda`) convey authority and trust, while grayscale surfaces provide calm breathing room.
 
 ---
-
-## Tech Stack
-
-- **HTML5** – Semantic markup, responsive structure.
-- **Tailwind CSS** – Utility‑first styling with a custom config (M3‑inspired colour tokens, extended spacing, border radius).
-- **Google Fonts** – Manrope (headlines) + Public Sans (body).
-- **Material Symbols** – Outline icons with variable font support.
-- **No build step** – Pure static HTML/CSS/JS, ready to deploy on any static hosting.
-
----
