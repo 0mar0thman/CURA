@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Consultation History - Wellness Insights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#bac3ff",
+              "tertiary-fixed-dim": "#4fdbcc",
+              "primary-fixed": "#8ff5df",
+              "primary": "#005145",
+              "outline": "#6e7976",
+              "surface-container-low": "#f2f4f5",
+              "on-surface-variant": "#3e4946",
+              "on-primary-fixed-variant": "#005045",
+              "background": "#f8fafb",
+              "secondary-container": "#4967f4",
+              "secondary-fixed": "#dee1ff",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e1e3e4",
+              "surface-tint": "#006b5c",
+              "on-secondary-fixed": "#001159",
+              "tertiary-container": "#006b62",
+              "error-container": "#ffdad6",
+              "tertiary-fixed": "#70f8e8",
+              "surface-container-lowest": "#ffffff",
+              "tertiary": "#00514a",
+              "on-secondary-container": "#fffbff",
+              "on-secondary": "#ffffff",
+              "surface-container-high": "#e6e8e9",
+              "on-surface": "#191c1d",
+              "primary-container": "#006b5c",
+              "on-primary-fixed": "#00201b",
+              "on-background": "#191c1d",
+              "surface": "#f8fafb",
+              "on-tertiary-container": "#66eedf",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed": "#00201d",
+              "primary-fixed-dim": "#73d8c3",
+              "surface-container-highest": "#e1e3e4",
+              "on-tertiary-fixed-variant": "#005049",
+              "on-primary": "#ffffff",
+              "surface-bright": "#f8fafb",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#eceeef",
+              "inverse-primary": "#73d8c3",
+              "inverse-surface": "#2e3132",
+              "surface-dim": "#d8dadb",
+              "on-secondary-fixed-variant": "#0031c4",
+              "on-error": "#ffffff",
+              "outline-variant": "#bec9c5",
+              "on-primary-container": "#86ebd5",
+              "inverse-on-surface": "#eff1f2",
+              "secondary": "#2b4cda"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Public Sans"],
+              "label": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Public Sans', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen">
+<!-- Shared SideNavBar Component -->
+<aside class="flex flex-col h-full py-8 px-4 h-screen w-64 border-r-0 bg-slate-50 dark:bg-slate-900 font-['Manrope'] antialiased tracking-tight sticky top-0">
+<div class="mb-10 px-2">
+<h1 class="text-xl font-bold text-emerald-900 dark:text-emerald-100">Clinical Curator</h1>
+<p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Health Specialist</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-emerald-800 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-150" href="../nutritionist_dashboard/nutrishionist-dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-semibold">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-emerald-800 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-150" href="../patient_profile_alexander_vance/patient-dashboard.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-semibold">Patients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-emerald-800 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-150" href="../new_consultation_form/consultation.html">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="font-semibold">Consultations</span>
+</a>
+<!-- Active State: History -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-emerald-900 dark:text-emerald-400 font-bold border-r-4 border-emerald-900 dark:border-emerald-400 bg-emerald-50/50 dark:bg-emerald-900/10 scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-semibold">History</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Dr. Julianne Case</p>
+<p class="text-xs text-on-surface-variant">Clinician Profile</p>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- Shared TopNavBar Component -->
+<header class="flex justify-between items-center w-full px-8 h-20 sticky top-0 z-40 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none font-['Manrope'] font-semibold">
+<div class="flex items-center gap-6 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 ring-emerald-500/30 outline-none" placeholder="Search consultations or patients..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4 ml-8">
+<button class="p-2 text-slate-400 dark:text-slate-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-400 dark:text-slate-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant opacity-20 mx-2"></div>
+<span class="text-emerald-900 dark:text-emerald-400 text-sm">Wellness Insights</span>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 lg:p-12 space-y-12">
+<!-- Summary Header (Editorial Style) -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">Consultation History</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">A comprehensive record of nutritional clinical paths and patient outcomes. Manage protocols and access session data.</p>
+</div>
+<div class="flex items-baseline gap-2 bg-surface-container-low px-6 py-4 rounded-xl">
+<span class="text-4xl font-black text-primary">1,284</span>
+<span class="text-sm font-semibold text-outline uppercase tracking-wider">Total Sessions</span>
+</div>
+</section>
+<!-- Filters & Controls -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-4 bg-surface-container-low p-1 rounded-xl">
+<div class="bg-surface-container-lowest px-4 py-3 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="calendar_today">calendar_today</span>
+<select class="bg-transparent border-none text-sm font-medium w-full focus:ring-0 cursor-pointer">
+<option>Last 30 Days</option>
+<option>Last 3 Months</option>
+<option>Year to Date</option>
+<option>Custom Range</option>
+</select>
+</div>
+<div class="bg-surface-container-lowest px-4 py-3 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="medical_information">medical_information</span>
+<select class="bg-transparent border-none text-sm font-medium w-full focus:ring-0 cursor-pointer">
+<option>All Protocols</option>
+<option>Inflammation Reduction</option>
+<option>Weight Management</option>
+<option>Gut Health Reset</option>
+</select>
+</div>
+<div class="bg-surface-container-lowest px-4 py-3 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="check_circle">check_circle</span>
+<select class="bg-transparent border-none text-sm font-medium w-full focus:ring-0 cursor-pointer">
+<option>All Statuses</option>
+<option>Completed</option>
+<option>Follow-up Scheduled</option>
+<option>Pending Protocol</option>
+</select>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold text-sm flex items-center justify-center gap-2 hover:bg-primary-container transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                    Apply Filters
+                </button>
+</section>
+<!-- Consultation Table (Editorial Data Grid) -->
+<section class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/10 text-outline text-xs uppercase tracking-[0.2em] font-bold">
+<th class="pb-6 px-4">Date</th>
+<th class="pb-6 px-4">Patient Name</th>
+<th class="pb-6 px-4">Protocol Type</th>
+<th class="pb-6 px-4 text-center">Status</th>
+<th class="pb-6 px-4 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="text-sm font-medium">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-low transition-colors border-b border-outline-variant/5">
+<td class="py-6 px-4 text-on-surface">Oct 24, 2023</td>
+<td class="py-6 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-xs font-bold text-on-secondary-fixed">EA</div>
+<span class="font-bold">Eleanor Abbott</span>
+</div>
+</td>
+<td class="py-6 px-4">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">Inflammation Reduction</span>
+</td>
+<td class="py-6 px-4 text-center">
+<div class="inline-flex items-center gap-1.5 text-emerald-600">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span class="text-xs font-bold">Completed</span>
+</div>
+</td>
+<td class="py-6 px-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-outline" title="View Notes">
+<span class="material-symbols-outlined text-lg" data-icon="description">description</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-outline" title="Export PDF">
+<span class="material-symbols-outlined text-lg" data-icon="picture_as_pdf">picture_as_pdf</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-container-low transition-colors border-b border-outline-variant/5">
+<td class="py-6 px-4 text-on-surface">Oct 22, 2023</td>
+<td class="py-6 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-xs font-bold text-on-tertiary-fixed">JM</div>
+<span class="font-bold">Julian Marquez</span>
+</div>
+</td>
+<td class="py-6 px-4">
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-bold">Weight Management</span>
+</td>
+<td class="py-6 px-4 text-center">
+<div class="inline-flex items-center gap-1.5 text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-xs font-bold">Follow-up Scheduled</span>
+</div>
+</td>
+<td class="py-6 px-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-outline" title="View Notes">
+<span class="material-symbols-outlined text-lg" data-icon="description">description</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-outline" title="Export PDF">
+<span class="material-symbols-outlined text-lg" data-icon="picture_as_pdf">picture_as_pdf</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-container-low transition-colors border-b border-outline-variant/5">
+<td class="py-6 px-4 text-on-surface">Oct 21, 2023</td>
+<td class="py-6 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-xs font-bold text-on-primary-fixed">SC</div>
+<span class="font-bold">Sarah Chen</span>
+</div>
+</td>
+<td class="py-6 px-4">
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-xs font-bold">Gut Health Reset</span>
+</td>
+<td class="py-6 px-4 text-center">
+<div class="inline-flex items-center gap-1.5 text-emerald-600">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span class="text-xs font-bold">Completed</span>
+</div>
+</td>
+<td class="py-6 px-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-outline" title="View Notes">
+<span class="material-symbols-outlined text-lg" data-icon="description">description</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-outline" title="Export PDF">
+<span class="material-symbols-outlined text-lg" data-icon="picture_as_pdf">picture_as_pdf</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-surface-container-low transition-colors border-b border-outline-variant/5">
+<td class="py-6 px-4 text-on-surface">Oct 19, 2023</td>
+<td class="py-6 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-xs font-bold text-on-surface">BH</div>
+<span class="font-bold">Brooks Hayes</span>
+</div>
+</td>
+<td class="py-6 px-4">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">Inflammation Reduction</span>
+</td>
+<td class="py-6 px-4 text-center">
+<div class="inline-flex items-center gap-1.5 text-outline">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="text-xs font-bold">Archived</span>
+</div>
+</td>
+<td class="py-6 px-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-outline" title="View Notes">
+<span class="material-symbols-outlined text-lg" data-icon="description">description</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-outline" title="Export PDF">
+<span class="material-symbols-outlined text-lg" data-icon="picture_as_pdf">picture_as_pdf</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<!-- Pagination/Footer -->
+<footer class="flex items-center justify-between border-t border-outline-variant/10 pt-8">
+<p class="text-sm text-on-surface-variant font-medium">Showing 4 of 1,284 consultations</p>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-lg flex items-center justify-center border border-outline-variant/20 hover:bg-surface-container-low text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center bg-primary text-on-primary font-bold text-sm">1</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-surface-container-low text-on-surface font-bold text-sm">2</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-surface-container-low text-on-surface font-bold text-sm">3</button>
+<span class="px-2 text-outline">...</span>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-surface-container-low text-on-surface font-bold text-sm">42</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center border border-outline-variant/20 hover:bg-surface-container-low text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</footer>
+</div>
+</main>
+<!-- Contextual FAB (Medical Context) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:bg-primary-container transition-all active:scale-95 group">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span class="absolute right-full mr-4 bg-on-surface text-surface text-xs font-bold py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">New Consultation</span>
+</button>
+</body></html>

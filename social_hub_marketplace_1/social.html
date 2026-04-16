@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#006b5c",
+              "on-primary-fixed-variant": "#005045",
+              "inverse-on-surface": "#eff1f2",
+              "primary-fixed": "#8ff5df",
+              "on-background": "#191c1d",
+              "on-tertiary-container": "#66eedf",
+              "inverse-surface": "#2e3132",
+              "on-error-container": "#93000a",
+              "on-error": "#ffffff",
+              "surface-container-high": "#e6e8e9",
+              "surface-container": "#eceeef",
+              "on-secondary": "#ffffff",
+              "surface-container-low": "#f2f4f5",
+              "on-tertiary-fixed-variant": "#005049",
+              "on-secondary-container": "#fffbff",
+              "inverse-primary": "#73d8c3",
+              "tertiary-container": "#006b62",
+              "on-surface-variant": "#3e4946",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#4967f4",
+              "outline-variant": "#bec9c5",
+              "error": "#ba1a1a",
+              "primary-fixed-dim": "#73d8c3",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#001159",
+              "on-surface": "#191c1d",
+              "secondary": "#2b4cda",
+              "tertiary-fixed": "#70f8e8",
+              "on-secondary-fixed-variant": "#0031c4",
+              "primary": "#005145",
+              "surface": "#f8fafb",
+              "surface-variant": "#e1e3e4",
+              "surface-dim": "#d8dadb",
+              "on-primary-container": "#86ebd5",
+              "tertiary-fixed-dim": "#4fdbcc",
+              "surface-tint": "#006b5c",
+              "background": "#f8fafb",
+              "on-tertiary-fixed": "#00201d",
+              "on-primary-fixed": "#00201b",
+              "surface-bright": "#f8fafb",
+              "tertiary": "#00514a",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#e1e3e4",
+              "secondary-fixed": "#dee1ff",
+              "outline": "#6e7976",
+              "secondary-fixed-dim": "#bac3ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Public Sans"],
+              "label": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Public Sans', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+        .glass-header { backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed">
+<!-- TopNavBar -->
+<header class="bg-[#f8fafb]/80 dark:bg-[#191c1d]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0_10px_40px_rgba(25,28,29,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-black text-[#191c1d] dark:text-[#f8fafb] uppercase">Cura</span>
+<nav class="hidden md:flex items-center space-y-0 space-x-8 font-manrope tracking-tight font-bold">
+<a class="text-[#565e5f] dark:text-[#bec9c5] hover:text-[#005145] transition-colors duration-200" href="../nutritionist_dashboard/nutrishionist-dashboard.html">Nutritionist</a>
+<a class="text-[#565e5f] dark:text-[#bec9c5] hover:text-[#005145] transition-colors duration-200" href="../client_meal_plan_tracking/client-meal.html">Meal Plan</a>
+<a class="text-[#565e5f] dark:text-[#bec9c5] hover:text-[#005145] transition-colors duration-200" href="../meal_delivery_storefront/marketplace.html">Storefront</a>
+<a class="text-[#565e5f] dark:text-[#bec9c5] hover:text-[#005145] transition-colors duration-200" href="../meal_delivery_storefront/marketplace.html">Marketplace</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-[#565e5f]"><div class="relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+</div></button>
+<button class="active:scale-95 transition-transform text-[#565e5f]">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+<div class="bg-[#eceeef] dark:bg-[#2b2d2e] h-px w-full"></div>
+</header>
+<div class="flex max-w-screen-2xl mx-auto min-h-screen relative">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-full py-8 space-y-2 bg-[#f2f4f5] dark:bg-[#191c1d] w-64 fixed left-0 top-0 pt-24 font-manrope text-sm font-semibold">
+<div class="px-6 mb-8">
+<p class="text-lg font-bold text-[#005145]">Health Ecosystem</p>
+<p class="text-xs text-[#565e5f]">Cura</p>
+</div>
+<nav class="flex flex-col space-y-1">
+<a class="flex items-center gap-4 px-6 py-3 text-[#565e5f] dark:text-[#bec9c5] hover:bg-[#eceeef] dark:hover:bg-[#2b2d2e] hover:translate-x-1 transition-transform active:scale-[0.98]" href="../nutritionist_dashboard/nutrishionist-dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-4 px-6 py-3 bg-[#ffffff] dark:bg-[#2b2d2e] text-[#005145] rounded-r-full shadow-sm hover:translate-x-1 transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+                    Social Hub
+                </a><a class="flex items-center gap-4 px-6 py-3 text-[#565e5f] dark:text-[#bec9c5] hover:bg-[#eceeef] dark:hover:bg-[#2b2d2e] hover:translate-x-1 transition-transform active:scale-[0.98]" href="../nutritionist_message_center/message-center.html">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                    Messages
+                    <span class="ml-auto bg-primary text-white text-[10px] px-1.5 py-0.5 rounded-full">2</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-[#565e5f] dark:text-[#bec9c5] hover:bg-[#eceeef] dark:hover:bg-[#2b2d2e] hover:translate-x-1 transition-transform active:scale-[0.98]" href="../real_time_delivery_tracking/delivery.html">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+                    Delivery Tracking
+                </a>
+<a class="flex items-center gap-4 px-6 py-3 text-[#565e5f] dark:text-[#bec9c5] hover:bg-[#eceeef] dark:hover:bg-[#2b2d2e] hover:translate-x-1 transition-transform active:scale-[0.98]" href="../client_meal_plan_tracking/client-meal.html">
+<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
+                    Meal Plans
+                </a>
+<a class="flex items-center gap-4 px-6 py-3 text-[#565e5f] dark:text-[#bec9c5] hover:bg-[#eceeef] dark:hover:bg-[#2b2d2e] hover:translate-x-1 transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 px-4 md:px-12 py-12 pb-32">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-12">
+<!-- Left Column: News Feed (8 cols) -->
+<div class="xl:col-span-8 space-y-12">
+<header class="flex justify-between items-end">
+<div>
+<h1 class="text-4xl font-extrabold tracking-tighter text-on-surface">Social Hub</h1>
+<p class="text-on-surface-variant mt-2 font-medium">Professional insights from our Cura network.</p>
+</div>
+<div class="hidden sm:flex gap-2">
+<span class="px-4 py-1 bg-surface-container-high rounded-full text-xs font-bold text-primary uppercase tracking-widest">Trending</span>
+</div>
+</header>
+<!-- Feed Items -->
+<div class="space-y-8">
+<!-- Post 1: Cura Insight -->
+<article class="bg-surface-container-lowest rounded-3xl p-8 transition-all">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed overflow-hidden">
+<img alt="Nutritionist Avatar" class="w-full h-full object-cover" data-alt="Portrait of a female professional nutritionist in a clinic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOkP6T7KoSrAiIUX3u9ydtqtpEEHnF-4q4dDLJvWIu1pGjOe1Ctzf7EY2EN2-o5mrEiQQ-XJ64KKw9os0ePzpUgJjycBdeeRw2XoLTallaZI3_HsVX3a0Mw6nqNZkXsdc9orXNXzVVQiV0fWLVbj8nlbq3Xgrjbk-6u8vYraCIxulX7i9NgZoxjfwcejiNtM8Qh0fFY24wDdcGDdMxGTGYQXIBfDB0treShrhCoZ1SOLDQR6Nc3FVcBvI461vO4N4Uw8vy53IqN5DC"/>
+</div>
+<div>
+<p class="font-bold text-on-surface leading-tight">Dr. Elena Rostova</p>
+<p class="text-xs text-on-surface-variant font-medium">Cura Nutritionist • 2h ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant cursor-pointer">more_horiz</span>
+</div>
+<h3 class="text-2xl font-bold mb-4 tracking-tight">The Gut-Brain Axis: New Cura Findings in Microbiome Diversity</h3>
+<p class="text-on-surface-variant body-lg leading-relaxed mb-6">
+                                Recent longitudinal studies suggest that specific fiber-dense profiles can modulate cortisol levels within 14 days. We are seeing a 22% increase in cognitive focus among participants adopting the Mediterranean-DASH fusion protocol...
+                            </p>
+<div class="rounded-2xl overflow-hidden mb-6 aspect-video bg-surface-container-low">
+<img alt="Healthy Food" class="w-full h-full object-cover" data-alt="A vibrant salad bowl with fresh vegetables and grains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTdVsC_suMvX5-EdIe_y0eS7UXj8h9zeVTVU99Q9-vdJ2zLBkOMk-TdsLGyexhwXLWASxs_eAuSVSxSGhfCr9_yjBYLA61MrzbgBbyc3CBBejhOSxRqtLvxTIPQaktSkAo16n87Vjvx1h8XCsfAwb6ciuMkFihgwx-ihxepQJ6A_gEC_k9jc1qzJkXitf4c9w9nLKvKUu3wmncfukLanDIFE3NYTR8iJUft0RzAoR-jLii2XdRV9X1NBhkz-5mkPWVl3XHC3VtRBRk"/>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-surface-container">
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 text-on-surface-variant text-sm font-semibold hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span> 124
+                                    </button>
+<button class="flex items-center gap-2 text-on-surface-variant text-sm font-semibold hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span> 18
+                                    </button>
+</div>
+<button class="flex items-center gap-2 text-on-surface-variant text-sm font-semibold hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</button>
+</div>
+</article>
+<!-- Post 2: Success Story -->
+<article class="bg-surface-container-lowest rounded-3xl p-8 transition-all">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed overflow-hidden">
+<img alt="Nutritionist Avatar" class="w-full h-full object-cover" data-alt="Male doctor nutritionist smiling in a medical office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA89qCTAFxzDIGRho8SwYYEDpLQn0fXSgdZMP9tuPhKLcEKRoDt2Q-dP2tQxcosIWPy3SOd-12wWWhc3tLxO6clIxcnzZCa19af-DxV2ZhwUogMxIKglScexP239ibTYk0Hx3djsqVY-kVbAd2gqSOCe6On8_wGDJHhUD8iqcrnKiJZ4yKyfpZdCqpeWGv51O6nDp5hBRn9SFFnnlkAePgVyyFDfjWi08kxI5b3ZI40ITw8rJIfNQkHgtoIWl2hJw9IfWtblMy4b2_b"/>
+</div>
+<div>
+<p class="font-bold text-on-surface leading-tight">Marcus Thorne, RD</p>
+<p class="text-xs text-on-surface-variant font-medium">Registered Dietitian • 5h ago</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="space-y-4">
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-black uppercase tracking-widest rounded">Success Story</span>
+<h3 class="text-2xl font-bold tracking-tight">Reversing Insulin Resistance via Timed-Nutrition</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                        A patient case study showing the transition from pre-diabetic markers to optimal metabolic health using a curated protein-pacing strategy over 12 weeks.
+                                    </p>
+<div class="flex gap-2">
+<div class="px-4 py-2 bg-surface-container-low rounded-xl text-center flex-1">
+<p class="text-[10px] uppercase font-bold text-outline">A1C Level</p>
+<p class="text-lg font-bold text-primary">-1.4%</p>
+</div>
+<div class="px-4 py-2 bg-surface-container-low rounded-xl text-center flex-1">
+<p class="text-[10px] uppercase font-bold text-outline">Energy</p>
+<p class="text-lg font-bold text-primary">+40%</p>
+</div>
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden bg-surface-container-low relative">
+<img alt="Case Study Image" class="w-full h-full object-cover" data-alt="Professional flat lay of healthy prepared ingredients" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApCLBAklTIEctGYiv0AjN2HRorWrnd_jqGOyVERKzPQupRj6UW3D7ozb6-PqlqsSsi19rVUlCLFVxbwrCgAKKkneFnrL2iuPEMW3CkLU_GveIPEQF0TN9kteMGw3ge-JsH2h3W4pEno7zW6y4pTcW62FHxs7JiO3eP3kRQumXlwNH4ViVGXaH128dxWIeOH76ujcZT7NWwVEv1d31CEb1xuNEaiLNwrNDAvqa6eQc41V9inyu-C2eA9o5CBpYpMA4xXDynV2JxbWTA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-4">
+<span class="text-white text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">visibility</span> View Protocol
+                                        </span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Right Column: Recipe Marketplace (4 cols) -->
+<aside class="xl:col-span-4 space-y-8">
+<div class="bg-surface-container-low rounded-[2rem] p-8">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-xl font-bold tracking-tight">Recipe Marketplace</h2>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<div class="space-y-6">
+<!-- Recipe Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm group cursor-pointer border border-transparent hover:border-primary/20 transition-all">
+<div class="h-32 bg-surface-container relative">
+<img alt="Recipe" class="w-full h-full object-cover" data-alt="High quality overhead photo of a salmon and avocado bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjH2Q0OjXSiT9OE7d5sKmSoViTXQAJEJlcMkoDE4zYSJto8cEMWDU0aVjHwXClJaQncIhNBR3sc3-2RhdcKuNM--Nb1T8OB6-xFQ2E1reBJonDGvu2fOQpnBZrj2Gq9lpwHZ7BBjC0epKvLW1eLMk_ASLHGh9t1E2z3zKuUDYt-y68126H0Qq024VfI3AI8eUctaLqT8L1CWswODaGL8tk12L_FqtKRDjSVYGR4tYxBiGYTbkzW3NPu9p-Covf5KxHP8XdLqcFWHT6"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur rounded-full px-2 py-1 text-[10px] font-black text-primary">
+                                        $4.99
+                                    </div>
+</div>
+<div class="p-4">
+<p class="text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Low-Glycemic</p>
+<h4 class="font-bold text-on-surface mb-3 line-clamp-1">Wild Atlantic Salmon Bowl</h4>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-primary-fixed-dim"></div>
+<span class="text-[10px] font-medium text-on-surface-variant">Dr. Rostova</span>
+</div>
+<span class="text-[10px] font-bold bg-surface-container-high px-2 py-0.5 rounded-full">480 kcal</span>
+</div>
+</div>
+</div>
+<!-- Recipe Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm group cursor-pointer border border-transparent hover:border-primary/20 transition-all">
+<div class="h-32 bg-surface-container relative">
+<img alt="Recipe" class="w-full h-full object-cover" data-alt="Fresh mediterranean salad with chickpeas and feta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-LiBNst8KdnyvQizLdgScYgYaw_edb4uNTZCQXRVIxOyzP1qF4KBZif8V_nltW9Ray1x0t6RDYuKAa9UQ5ICTrTr0uIARXbJ9pNCSZ3P82DLRkfVrv_8j-D0wv_7hcBDV29TVTJYtimF4ROsP0m9w6jpNRnC8yOPQkEujxG7hCcY9rvXYCO6qh8Xc_MTaAMgrvyISjffUH-Y5AW8A2uGypuZBwSoWXkes4i9LGzpqE13s3Bgjux_rMVds4sncz_TErlN1VndoIhD8"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur rounded-full px-2 py-1 text-[10px] font-black text-primary">
+                                        $2.99
+                                    </div>
+</div>
+<div class="p-4">
+<p class="text-[10px] font-bold text-outline uppercase tracking-wider mb-1">Anti-Inflammatory</p>
+<h4 class="font-bold text-on-surface mb-3 line-clamp-1">Chickpea &amp; Feta Med-Mix</h4>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-secondary-fixed"></div>
+<span class="text-[10px] font-medium text-on-surface-variant">Marcus Thorne</span>
+</div>
+<span class="text-[10px] font-bold bg-surface-container-high px-2 py-0.5 rounded-full">320 kcal</span>
+</div>
+</div>
+</div>
+<!-- Recipe Card 3 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm group cursor-pointer border border-transparent hover:border-primary/20 transition-all">
+<div class="h-32 bg-surface-container relative">
+<img alt="Recipe" class="w-full h-full object-cover" data-alt="Grains and greens protein bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiS5s5x-eNAZuOiIzotBr-aPbsVDj7FZAyVyifrFga3cBvH71N0Cf7YBOiLAJMvFxnJzQ3KyeU1aSpMT4EqF4FOurY4JGBoyQT9aYnrpsTXNoe5ZxJceCOV8ed95cVv2PqzmFVHok-GnQ1Pd-TnrJE3SKkh_njwMH1wyU94egXGyeSK2VZY4E9iZKaRKtvZbLJKABC0lGTcwssE6x26pfN8v8SIeu1QcjXzJ2UU5IzyWkkEPiUQJdIONLz_j6jDXnE1UJf3LiZP3ho"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur rounded-full px-2 py-1 text-[10px] font-black text-primary">
+                                        $5.50
+                                    </div>
+</div>
+<div class="p-4">
+<p class="text-[10px] font-bold text-outline uppercase tracking-wider mb-1">High Protein</p>
+<h4 class="font-bold text-on-surface mb-3 line-clamp-1">Quinoa &amp; Roasted Root Power</h4>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-tertiary-fixed"></div>
+<span class="text-[10px] font-medium text-on-surface-variant">Sarah Chen</span>
+</div>
+<span class="text-[10px] font-bold bg-surface-container-high px-2 py-0.5 rounded-full">510 kcal</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-4 bg-primary text-white rounded-full font-bold text-sm hover:bg-primary-container transition-all active:scale-[0.98]">
+                            Browse Full Marketplace
+                        </button>
+</div>
+<!-- Recommended Connections -->
+<div class="px-4">
+<h3 class="text-lg font-bold mb-6">Expert Network</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Doc" data-alt="Portrait of a medical professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWTFdtSRRMBCv6xkXXK7bIZdasmmzafcwRQCoVE_Zxe9-J68yBA5J9_Nu5tbvYSef3C8yQ7UhttdsSFzZq7NM6TxX0HtULmoWtqaceBbdSfXq8fjwcvQnZRJItfxG0pZuCCSGWCt1TeoB_mawPsSu_RK31ja_Q4kRyBxV_QqOaOGl_94uyj2qABf2ZEJEgxNNO8bMBKv3FZk2Si_glETyJXb__-S3q7WTb0AIlMLPadUo-bW7wHYnpfYN3va4No1lED8DRQgFQfHJg"/>
+</div>
+<div>
+<p class="text-sm font-bold leading-none">Dr. Sarah Chen</p>
+<p class="text-[10px] text-outline">Endocrinology Specialist</p>
+</div>
+</div>
+<button class="text-primary text-xs font-bold uppercase tracking-wider">Follow</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Doc" data-alt="Portrait of a male health professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWaf6wwCgiosHO3XNKvY0hFZSqtutq7LKXM3KxAm0IVInJ-Jn7l62XTnCQgvRlw3A4gWxM67z5gFex1GLVf4NGUY5Xa57RcCpAj4uGW5t4NSiLZKuVP5eyF10ApE55BO9cYlRmIDvcX75L6jHpBCl16KjCI28csBU-n_woz3Zu0jq_UBI_GIXX4OeQcN5Q2z8g66nRl2khbXatHHkAm9B1tssEhzX9rlagijkEwLp43gNZD-_2fk9K4uQU9m7m61n2lxPi85RA1pMo"/>
+</div>
+<div>
+<p class="text-sm font-bold leading-none">James Riley</p>
+<p class="text-[10px] text-outline">Sports Dietitian</p>
+</div>
+</div>
+<button class="text-primary text-xs font-bold uppercase tracking-wider">Follow</button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#f8fafb]/90 dark:bg-[#191c1d]/90 backdrop-blur-md shadow-[0_-10px_40px_rgba(25,28,29,0.06)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center bg-[#005145] text-white rounded-full p-3 active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="forum" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="text-[10px] font-medium font-public-sans">Social</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#565e5f] dark:text-[#bec9c5] p-3 hover:bg-[#eceeef] dark:hover:bg-[#2b2d2e] rounded-full active:scale-90 transition-all duration-300" href="../real_time_delivery_tracking/delivery.html">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-[10px] font-medium font-public-sans">Tracking</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#565e5f] dark:text-[#bec9c5] p-3 hover:bg-[#eceeef] dark:hover:bg-[#2b2d2e] rounded-full active:scale-90 transition-all duration-300" href="../meal_delivery_storefront/marketplace.html">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+<span class="text-[10px] font-medium font-public-sans">Store</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#565e5f] dark:text-[#bec9c5] p-3 hover:bg-[#eceeef] dark:hover:bg-[#2b2d2e] rounded-full active:scale-90 transition-all duration-300" href="../client_meal_plan_tracking/client-meal.html">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="text-[10px] font-medium font-public-sans">Plans</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#565e5f] dark:text-[#bec9c5] p-3 hover:bg-[#eceeef] dark:hover:bg-[#2b2d2e] rounded-full active:scale-90 transition-all duration-300" href="../patient_profile_alexander_vance/patient-dashboard.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-medium font-public-sans">Profile</span>
+</a>
+</nav>
+<button class="fixed bottom-8 right-8 z-[60] w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group">
+<span class="material-symbols-outlined text-3xl">chat</span>
+<span class="absolute top-0 right-0 w-4 h-4 bg-error border-2 border-white rounded-full"></span>
+</button><div class="fixed bottom-0 right-0 w-full max-w-sm h-[600px] z-[70] bg-white dark:bg-background-dark rounded-t-3xl shadow-2xl border border-surface-container-high transition-transform transform translate-y-full lg:translate-y-0 lg:mr-8 lg:mb-24 lg:rounded-3xl flex flex-col" id="messaging-center">
+<div class="p-6 border-b border-surface-container flex justify-between items-center">
+<h2 class="text-xl font-extrabold text-on-surface tracking-tight">Cura Messaging</h2>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-4">
+<!-- Active Conversation 1 -->
+<div class="flex items-center gap-4 p-3 rounded-2xl bg-surface-container-low border border-transparent hover:border-primary/20 cursor-pointer transition-all">
+<div class="relative">
+<img alt="Dr. Rostova" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOkP6T7KoSrAiIUX3u9ydtqtpEEHnF-4q4dDLJvWIu1pGjOe1Ctzf7EY2EN2-o5mrEiQQ-XJ64KKw9os0ePzpUgJjycBdeeRw2XoLTallaZI3_HsVX3a0Mw6nqNZkXsdc9orXNXzVVQiV0fWLVbj8nlbq3Xgrjbk-6u8vYraCIxulX7i9NgZoxjfwcejiNtM8Qh0fFY24wDdcGDdMxGTGYQXIBfDB0treShrhCoZ1SOLDQR6Nc3FVcBvI461vO4N4Uw8vy53IqN5DC"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<p class="font-bold text-sm">Dr. Elena Rostova</p>
+<span class="text-[10px] text-primary font-bold">Just now</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-1">Did you manage to try the Mediterranean protocol today?</p>
+</div>
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+</div>
+<!-- Active Conversation 2 -->
+<div class="flex items-center gap-4 p-3 rounded-2xl hover:bg-surface-container-lowest transition-all cursor-pointer">
+<div class="relative">
+<img alt="Marcus Thorne" class="w-12 h-12 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA89qCTAFxzDIGRho8SwYYEDpLQn0fXSgdZMP9tuPhKLcEKRoDt2Q-dP2tQxcosIWPy3SOd-12wWWhc3tLxO6clIxcnzZCa19af-DxV2ZhwUogMxIKglScexP239ibTYk0Hx3djsqVY-kVbAd2gqSOCe6On8_wGDJHhUD8iqcrnKiJZ4yKyfpZdCqpeWGv51O6nDp5hBRn9SFFnnlkAePgVyyFDfjWi08kxI5b3ZI40ITw8rJIfNQkHgtoIWl2hJw9IfWtblMy4b2_b"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<p class="font-bold text-sm text-on-surface">Marcus Thorne, RD</p>
+<span class="text-[10px] text-outline">2h ago</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-1">Your A1C levels are looking much better...</p>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-surface-container">
+<button class="w-full py-3 bg-surface-container-high text-primary font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all">
+            New Consultation Message
+        </button>
+</div>
+</div></body></html>

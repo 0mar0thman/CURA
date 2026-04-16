@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Curator Portal - Messages</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Public+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#dee1ff",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed-variant": "#0031c4",
+              "on-background": "#191c1d",
+              "outline-variant": "#bec9c5",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#eceeef",
+              "on-secondary-fixed": "#001159",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e1e3e4",
+              "on-error-container": "#93000a",
+              "surface-container-low": "#f2f4f5",
+              "tertiary-fixed-dim": "#4fdbcc",
+              "surface": "#f8fafb",
+              "secondary-fixed-dim": "#bac3ff",
+              "on-primary-fixed-variant": "#005045",
+              "secondary": "#2b4cda",
+              "on-primary-fixed": "#00201b",
+              "tertiary": "#00514a",
+              "inverse-surface": "#2e3132",
+              "inverse-primary": "#73d8c3",
+              "on-primary-container": "#86ebd5",
+              "outline": "#6e7976",
+              "background": "#f8fafb",
+              "surface-dim": "#d8dadb",
+              "on-tertiary-fixed-variant": "#005049",
+              "on-surface-variant": "#3e4946",
+              "primary-fixed-dim": "#73d8c3",
+              "on-secondary-container": "#fffbff",
+              "surface-variant": "#e1e3e4",
+              "surface-container-high": "#e6e8e9",
+              "surface-bright": "#f8fafb",
+              "primary-fixed": "#8ff5df",
+              "on-tertiary-fixed": "#00201d",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#006b62",
+              "surface-tint": "#006b5c",
+              "inverse-on-surface": "#eff1f2",
+              "tertiary-fixed": "#70f8e8",
+              "primary": "#005145",
+              "secondary-container": "#4967f4",
+              "on-surface": "#191c1d",
+              "on-tertiary-container": "#66eedf",
+              "on-error": "#ffffff",
+              "primary-container": "#006b5c",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Public Sans"],
+              "label": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: #f8fafb;
+        }
+        h1, h2, h3, .font-manrope {
+            font-family: 'Manrope', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="text-on-surface antialiased overflow-hidden">
+<!-- Sidebar Navigation Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#f2f4f5] flex flex-col py-6 gap-4 z-40">
+<div class="px-6 mb-8">
+<h1 class="font-manrope font-bold text-[#005145] text-xl tracking-tight">Curated Health</h1>
+<p class="text-xs text-on-surface-variant opacity-70">Clinical Nutritionist</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:bg-white/40 transition-all active:scale-[0.98]" href="../nutritionist_dashboard/nutrishionist-dashboard.html">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-medium text-sm">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:bg-white/40 transition-all active:scale-[0.98]" href="../patient_profile_alexander_vance/patient-dashboard.html">
+<span class="material-symbols-outlined">person_search</span>
+<span class="font-medium text-sm">Patient Records</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 bg-[#ffffff] text-[#005145] rounded-r-full shadow-sm active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="font-medium text-sm">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:bg-white/40 transition-all active:scale-[0.98]" href="../client_meal_plan_tracking/client-meal.html">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="font-medium text-sm">Meal Plans</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:bg-white/40 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">medication</span>
+<span class="font-medium text-sm">Supplement Logs</span>
+</a>
+</nav>
+<div class="px-6 mt-auto flex flex-col gap-4">
+<button class="bg-[#005145] text-white rounded-full py-3 px-4 flex items-center justify-center gap-2 font-semibold text-sm shadow-lg hover:bg-[#006b5c] transition-colors active:scale-95">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Consult
+            </button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 py-2 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="text-xs font-medium">Support</span>
+</a>
+<a class="flex items-center gap-3 py-2 text-slate-500 hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-xs font-medium">Sign Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex h-screen overflow-hidden">
+<!-- Left Pane: Inbox List -->
+<section class="w-80 flex-shrink-0 bg-surface flex flex-col border-r border-outline-variant/10">
+<div class="p-6 pb-2">
+<h2 class="text-2xl font-manrope font-extrabold tracking-tighter text-on-surface mb-6">Patient Inbox</h2>
+<div class="relative mb-4">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-lg pl-10 pr-4 py-2.5 text-sm focus:ring-2 focus:ring-secondary/30 transition-all" placeholder="Search conversations..." type="text"/>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto hide-scrollbar px-3 space-y-1">
+<!-- Active Chat Item -->
+<div class="p-4 bg-surface-container-lowest rounded-xl shadow-sm cursor-pointer border border-primary/5">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-sm text-on-surface">Eleanor Thorne</span>
+<span class="text-[10px] text-outline">10:42 AM</span>
+</div>
+<div class="flex justify-between items-end">
+<p class="text-xs text-on-surface-variant line-clamp-1 pr-4">I've been feeling much more energetic since the shift...</p>
+<div class="w-2 h-2 rounded-full bg-secondary shrink-0 mb-1"></div>
+</div>
+</div>
+<!-- Chat Item -->
+<div class="p-4 hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-1">
+<span class="font-semibold text-sm text-on-surface">Marcus Sterling</span>
+<span class="text-[10px] text-outline">Yesterday</span>
+</div>
+<p class="text-xs text-outline group-hover:text-on-surface-variant transition-colors line-clamp-1 pr-4">Can we review the latest A1C results together?</p>
+</div>
+<!-- Chat Item -->
+<div class="p-4 hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-1">
+<span class="font-semibold text-sm text-on-surface">Dr. Julian Vance</span>
+<span class="text-[10px] text-outline">Yesterday</span>
+</div>
+<p class="text-xs text-outline group-hover:text-on-surface-variant transition-colors line-clamp-1 pr-4">Referral: New patient protocols for GI sensitivity.</p>
+</div>
+<!-- Chat Item -->
+<div class="p-4 hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-1">
+<span class="font-semibold text-sm text-on-surface">Sarah Jenkins</span>
+<span class="text-[10px] text-outline">Oct 24</span>
+</div>
+<p class="text-xs text-outline group-hover:text-on-surface-variant transition-colors line-clamp-1 pr-4">The meal plan looks great, but I need a swap for...</p>
+</div>
+<!-- Chat Item -->
+<div class="p-4 hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-1">
+<span class="font-semibold text-sm text-on-surface">Leo Richards</span>
+<span class="text-[10px] text-outline">Oct 22</span>
+</div>
+<div class="flex justify-between items-end">
+<p class="text-xs text-outline group-hover:text-on-surface-variant transition-colors line-clamp-1 pr-4">Just uploaded my latest weight log for this week.</p>
+<div class="w-5 h-5 rounded-full bg-tertiary-container flex items-center justify-center text-[10px] text-on-tertiary-container font-bold shrink-0 mb-0.5">3</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Center Pane: Thread Area -->
+<section class="flex-1 bg-surface-container-low flex flex-col relative">
+<!-- Thread Header -->
+<header class="h-16 flex items-center justify-between px-8 bg-surface/80 backdrop-blur-xl z-10">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Eleanor Thorne Profile" class="w-9 h-9 rounded-full object-cover" data-alt="Portrait of a woman with a friendly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwEX2V9PR-KVn4Q_T5jBEnTJxRvA6Ml_U3IY7o5cod9lMbHK35OYS8i8k2tzQTy8uSvMjI2KiFA5lZOy6asc_rsGKJT78s7X7eP9Z0DLGV3TnUPKPk_dH8EAq22G-P614dnPQVsDEW-efNmQGLlm2txhsUyEKVXGPIxbKxZhLJQ7iVIuJSw4IuSPs-Z_kg98immnbNRZ2b-X4_0eGzLpA5QfdH_nX1KKDO3umF9LZWzO9d4adBdXVqKfw-fc7dmxbHlw57FQC9Iasp"/>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></div>
+</div>
+<div>
+<h3 class="font-manrope font-bold text-on-surface leading-tight">Eleanor Thorne</h3>
+<p class="text-[10px] text-on-surface-variant/70 uppercase tracking-widest font-semibold">Online • Patient ID: #ET-8802</p>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Conversation Thread -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8 hide-scrollbar">
+<div class="flex justify-center">
+<span class="text-[10px] font-bold text-outline-variant bg-surface px-3 py-1 rounded-full uppercase tracking-tighter">October 26, 2023</span>
+</div>
+<!-- Recipient Message -->
+<div class="flex gap-4 max-w-lg">
+<img alt="Eleanor Avatar" class="w-8 h-8 rounded-full mt-1" data-alt="Patient profile small icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGE22vAjarkDw61St-tOhcqjdKafdmi-W4YbfGXA63G6xG5CMeu8o3J0kJvg8kS7HvsXxnlgVP7uDbx965LIW3QgqbI8GbYC190ls2Ldej3wxMi6KeiLUEp8kpaBaDVKa9TWXiMznruXhHOf_qSh5LleZ_PbDbPol5GtLQQ0vP7osxc1xEvfNAZ2m0PSlqgz_Ikjduhckp2zZtv0Z4FAMgWExcJeQrIJfqgOoT0ivBzITvpbF1MTPWo5Gi_Z6dCCKxbMWAr-kpnEa2"/>
+<div>
+<div class="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm text-sm text-on-surface-variant leading-relaxed">
+                            Hello! I just wanted to update you on the new intermittent fasting window. I've been feeling much more energetic since the shift, but I'm finding it hard to hit my protein goals in that 8-hour window. Any suggestions?
+                        </div>
+<span class="text-[10px] text-outline mt-1 inline-block">10:42 AM</span>
+</div>
+</div>
+<!-- Sender Message (Nutritionist) -->
+<div class="flex flex-row-reverse gap-4 max-w-lg ml-auto">
+<div class="flex flex-col items-end">
+<div class="bg-primary text-on-primary p-4 rounded-2xl rounded-tr-none shadow-sm text-sm leading-relaxed">
+                            That's wonderful to hear about your energy levels, Eleanor! For protein, we might need to look at more dense sources or high-quality supplementation. 
+                        </div>
+<div class="bg-primary/90 text-on-primary p-4 rounded-2xl rounded-tr-none shadow-sm text-sm leading-relaxed mt-2">
+                            I've attached a quick protein-optimized snack guide below. Try the Greek yogurt bark; it's easy to prep!
+                        </div>
+<div class="mt-3 w-full bg-white/40 p-3 rounded-xl flex items-center gap-3 backdrop-blur-sm active:scale-95 transition-transform cursor-pointer">
+<div class="w-10 h-10 bg-primary/10 rounded flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-bold text-primary truncate">Protein_Snack_Guide_v2.pdf</p>
+<p class="text-[10px] text-primary/60">1.2 MB • Clinical Resource</p>
+</div>
+</div>
+<span class="text-[10px] text-outline mt-1 inline-block">11:05 AM • Read</span>
+</div>
+</div>
+<!-- Recipient Message -->
+<div class="flex gap-4 max-w-lg">
+<img alt="Eleanor Avatar" class="w-8 h-8 rounded-full mt-1" data-alt="Patient profile small icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJxzebJfpQXLDa7EMF9vL43T0GkRis6w8eZJme-t91khVil7_u-m_CP56nmQHuSsxf7EjJdu6xKZAOzc4vQnUmrmh4wKzsn6obouSeTom0JvZ95UkqvqKdxcuhYFHUWIKKEWIaItyackDJsP-TZTyQBGaQbdvvx0_w-QzzqG57vTJ8NUdROWaMN4ffh0vuHpJvDQZbjt13XJ0276CmSzgaXK7b7L4ICHJtJRSrsyrDqAhJ-s031UqVYKZ8WN-CcvzLeuRCAzxqjX13"/>
+<div>
+<div class="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm text-sm text-on-surface-variant leading-relaxed">
+                            Perfect, thank you! I'll check that out now. Also, I noticed my weight stalled a bit this week. Is that expected with the metabolic shift?
+                        </div>
+<span class="text-[10px] text-outline mt-1 inline-block">11:12 AM</span>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="p-6 bg-surface">
+<div class="bg-surface-container-high rounded-2xl p-2 shadow-inner">
+<div class="flex gap-2 mb-2 px-2 py-1 overflow-x-auto hide-scrollbar">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-xl">format_bold</span></button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-xl">format_italic</span></button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-xl">link</span></button>
+<div class="w-px h-4 bg-outline-variant/30 self-center mx-1"></div>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-xl">attach_file</span></button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-xl">description</span></button>
+</div>
+<div class="flex items-end gap-2 px-2 pb-2">
+<textarea class="flex-1 bg-transparent border-none focus:ring-0 text-sm py-2 resize-none max-h-32" placeholder="Write clinical advice or attach protocol..." rows="1"></textarea>
+<button class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform shrink-0">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Pane: Patient Snapshot -->
+<aside class="w-80 flex-shrink-0 bg-[#f2f4f5] border-l border-outline-variant/10 flex flex-col p-6 overflow-y-auto hide-scrollbar">
+<h4 class="font-manrope font-extrabold text-sm uppercase tracking-widest text-[#005145] mb-6">Patient Snapshot</h4>
+<!-- Bio Markers Grid -->
+<div class="grid grid-cols-2 gap-3 mb-8">
+<div class="bg-white p-4 rounded-xl shadow-sm">
+<p class="text-[10px] font-bold text-outline uppercase tracking-tighter mb-1">HbA1C Level</p>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-manrope font-bold text-on-surface">5.4</span>
+<span class="text-[10px] text-green-600 font-bold">Optimal</span>
+</div>
+<div class="mt-2 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-green-500 w-[70%]"></div>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-sm">
+<p class="text-[10px] font-bold text-outline uppercase tracking-tighter mb-1">Body Fat %</p>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-manrope font-bold text-on-surface">22.8</span>
+<span class="text-[10px] text-secondary font-bold">↓ 1.2%</span>
+</div>
+<div class="mt-2 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[45%]"></div>
+</div>
+</div>
+</div>
+<!-- Weight Trend Asymmetric Graphic -->
+<div class="mb-8">
+<div class="flex justify-between items-end mb-4">
+<h5 class="text-xs font-bold text-on-surface">Weight Trend (90d)</h5>
+<span class="text-[10px] text-outline-variant font-medium">164 lbs Target</span>
+</div>
+<div class="h-24 w-full bg-white rounded-2xl flex items-end justify-between p-4 overflow-hidden relative">
+<!-- Abstract Trend Visualization -->
+<div class="absolute inset-0 opacity-10 flex items-center justify-center">
+<span class="material-symbols-outlined scale-[5] text-primary">monitoring</span>
+</div>
+<div class="h-[60%] w-1.5 bg-secondary-fixed rounded-full"></div>
+<div class="h-[55%] w-1.5 bg-secondary-fixed rounded-full"></div>
+<div class="h-[50%] w-1.5 bg-secondary-fixed rounded-full"></div>
+<div class="h-[52%] w-1.5 bg-secondary-fixed rounded-full"></div>
+<div class="h-[45%] w-1.5 bg-secondary rounded-full"></div>
+<div class="h-[42%] w-1.5 bg-secondary rounded-full"></div>
+<div class="h-[40%] w-1.5 bg-secondary rounded-full"></div>
+<div class="h-[38%] w-1.5 bg-primary rounded-full"></div>
+</div>
+</div>
+<!-- Meal Plan & Protocols -->
+<div class="space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">restaurant</span>
+<h5 class="text-xs font-bold text-on-surface">Current Meal Plan</h5>
+</div>
+<div class="bg-white/50 border border-white p-4 rounded-xl">
+<p class="text-xs font-semibold text-on-surface">Low-GI Inflammation Support</p>
+<p class="text-[10px] text-on-surface-variant mt-1">Week 4 of 12 • Active Phase</p>
+<button class="mt-3 text-[10px] font-bold text-primary flex items-center gap-1 hover:underline">
+                        View Plan <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-6 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+<h5 class="text-xs font-bold text-on-surface">Active Protocols</h5>
+</div>
+<div class="space-y-2">
+<div class="bg-[#e1e3e4] px-3 py-2 rounded-lg flex items-center justify-between">
+<span class="text-[10px] font-medium text-on-surface">Magnesium Glycinate (PM)</span>
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="bg-[#e1e3e4] px-3 py-2 rounded-lg flex items-center justify-between">
+<span class="text-[10px] font-medium text-on-surface">High-Intensity Fasting (16:8)</span>
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="bg-[#e1e3e4] px-3 py-2 rounded-lg flex items-center justify-between opacity-50">
+<span class="text-[10px] font-medium text-on-surface">Vitamin D3 Support</span>
+<span class="material-symbols-outlined text-xs">radio_button_unchecked</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-8">
+<div class="bg-primary/5 p-4 rounded-2xl border border-primary/10">
+<p class="text-[10px] font-bold text-primary uppercase tracking-tighter mb-2">Next Consultation</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-manrope font-bold text-on-surface">Oct 30 @ 2:30 PM</span>
+<button class="bg-white text-primary text-[10px] font-bold px-2 py-1 rounded shadow-sm">Reschedule</button>
+</div>
+</div>
+</div>
+</aside>
+</main>
+</body></html>

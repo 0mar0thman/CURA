@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Curator | Precision Nutrition, Professionally Guided</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#4967f4",
+              "on-secondary-fixed-variant": "#0031c4",
+              "error": "#ba1a1a",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#4fdbcc",
+              "surface-dim": "#d8dadb",
+              "surface-tint": "#006b5c",
+              "on-error-container": "#93000a",
+              "outline-variant": "#bec9c5",
+              "primary": "#005145",
+              "on-primary-container": "#86ebd5",
+              "on-secondary-fixed": "#001159",
+              "secondary": "#2b4cda",
+              "on-tertiary-fixed": "#00201d",
+              "surface-container-high": "#e6e8e9",
+              "secondary-fixed-dim": "#bac3ff",
+              "on-surface": "#191c1d",
+              "tertiary-fixed": "#70f8e8",
+              "inverse-primary": "#73d8c3",
+              "on-primary-fixed": "#00201b",
+              "on-tertiary-fixed-variant": "#005049",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#005045",
+              "surface-container-low": "#f2f4f5",
+              "outline": "#6e7976",
+              "on-secondary-container": "#fffbff",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#3e4946",
+              "primary-container": "#006b5c",
+              "background": "#f8fafb",
+              "surface-bright": "#f8fafb",
+              "primary-fixed-dim": "#73d8c3",
+              "secondary-fixed": "#dee1ff",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#eff1f2",
+              "primary-fixed": "#8ff5df",
+              "on-tertiary-container": "#66eedf",
+              "tertiary-container": "#006b62",
+              "surface-variant": "#e1e3e4",
+              "on-background": "#191c1d",
+              "inverse-surface": "#2e3132",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e1e3e4",
+              "surface": "#f8fafb",
+              "tertiary": "#00514a",
+              "surface-container": "#eceeef"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Public Sans"],
+              "label": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+        }
+        body {
+            background-color: #f8fafb;
+            color: #191c1d;
+            font-family: 'Public Sans', sans-serif;
+        }
+        .editorial-shadow {
+            box-shadow: 0 10px 40px rgba(25, 28, 29, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f8fafb]/80 backdrop-blur-xl shadow-[0_10px_40px_rgba(25,28,29,0.06)]">
+<div class="flex justify-between items-center px-8 h-16 w-full max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#005145] font-['Manrope']">Cura</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="bg-surface-container-high border-none rounded-full pl-10 pr-4 py-1.5 text-sm focus:ring-2 focus:ring-secondary/30 w-64" placeholder="Search resources..." type="text"/>
+</div>
+<button class="p-2 text-slate-500 hover:bg-[#f2f4f5] rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-[#f2f4f5] rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-container overflow-hidden ml-2">
+<img class="w-full h-full object-cover" data-alt="User profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCcREG8jNheEYA35CNiaI7SFWWHQZ239m-xZW0qlCoy71iCV3qdyZCEGLTiUaEq6WJv1i3yiDa6RyNPpsNydTmoa_ZfiYwpHX6kQMAG7p_p-QXsIpm6lwD7E9q9UfBTQyF_NYi0TTGMIGxIX8vJ92Ynr4KgNclIL_5oawHKlUNuRFuXe7QlcY4OAer8LLvjNUKMM4UduQd_x9mNn8E4avysO24__ybMxMSPhlaLVMnzZaLMoEBe5chT99fmkZX6dTQPg_GRxC0wHLV"/>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center px-8 overflow-hidden bg-surface">
+<div class="max-w-screen-2xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<span class="text-primary font-headline font-bold tracking-widest uppercase text-sm mb-6 block">Evidence-Based Wellness</span>
+<h1 class="text-display-lg md:text-6xl font-headline font-extrabold text-on-surface leading-[1.1] tracking-tight mb-8">
+                        Precision Nutrition, <br/>
+<span class="text-primary">Professionally Guided.</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed font-body">
+                        Bridge the gap between clinical expertise and daily habit. We connect world-class practitioners with precision-grade nutritional logistics to curate your optimal health.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary hover:bg-primary-container text-white px-8 py-4 rounded-full font-headline font-bold text-lg transition-all active:scale-95 shadow-lg shadow-primary/10">
+                            Start Your Journey
+                        </button>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-8 py-4 rounded-full font-headline font-bold text-lg transition-all hover:bg-secondary-fixed-dim active:scale-95">
+                            For Practitioners
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl relative">
+<img class="w-full h-full object-cover" data-alt="A meticulously prepared clinical grade healthy meal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn7t7n2g4n1Te3AtKnY-pvfJyv4rPgBOArFA_ESIfk2AHafPPUgbXluhL_Ree_cHATk5Z2J5pc1MxLZr9KwYLLM32Ot-SIgeXV07WNyQTOGNYr8rX7EJNRnbk0hdRX_Cdxl2t7nWYyLIETuw_WnapyvlORps2jyvncMqdrLDm-QGpPO_JhDu-fcQbv4ZgIOAWr05InQMIUFlmbizRb4Z5kDhkB43sKqqC0hBZhaNJG16pXkSBdDh8xydrot17dbTTplFljXEle29Th"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+</div>
+<!-- Floating Metric Card -->
+</div>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute top-0 right-0 w-1/2 h-full bg-surface-container-low -z-10 rounded-l-[5rem]"></div>
+</section>
+<!-- How It Works (Bento Style) -->
+<section class="py-32 px-8 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-20">
+<h2 class="text-4xl font-headline font-extrabold mb-4">How it Works</h2>
+<p class="text-on-surface-variant max-w-2xl font-body">A seamless workflow from clinical assessment to your dinner table.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest p-10 rounded-[2.5rem] transition-all hover:-translate-y-2 group">
+<div class="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">medical_services</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">1. Cura Consult</h3>
+<p class="text-on-surface-variant leading-relaxed">Your journey begins with a certified practitioner who analyzes your unique biomarkers and health goals.</p>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest p-10 rounded-[2.5rem] transition-all hover:-translate-y-2 group">
+<div class="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">architecture</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">2. Precision Plan</h3>
+<p class="text-on-surface-variant leading-relaxed">Our AI-assisted platform translates clinical advice into a granular, nutrient-dense meal architecture.</p>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest p-10 rounded-[2.5rem] transition-all hover:-translate-y-2 group">
+<div class="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">local_shipping</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">3. Clinical Delivery</h3>
+<p class="text-on-surface-variant leading-relaxed">Chef-prepared meals, strictly adhering to your clinical profile, delivered fresh to your doorstep.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Dual Focus: For Practitioners & Clients -->
+<section class="py-32 px-8 bg-surface">
+<div class="max-w-screen-2xl mx-auto space-y-32">
+<!-- For Practitioners -->
+<div class="flex flex-col lg:flex-row items-center gap-20">
+<div class="lg:w-1/2">
+<div class="inline-block px-4 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-bold mb-6">PRACTITIONER PORTAL</div>
+<h2 class="text-4xl font-headline font-extrabold mb-6 leading-tight">Elevate Your Practice with <br/>Verifiable Nutrition Compliance.</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">Stop guessing what your clients eat. Monitor adherence through real-time telemetry and clinical-grade meal delivery logs. Integrate with existing EHR systems seamlessly.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-medium">Direct EHR Integration</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-medium">Adherence Telemetry</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-medium">Custom Formula Design</span>
+</li>
+</ul>
+<button class="text-primary font-bold flex items-center gap-2 group">
+                            Explore Clinical Tools
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="lg:w-1/2 relative">
+<div class="aspect-video bg-surface-container-high rounded-[2rem] overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover" data-alt="A healthcare professional using a tablet in a modern clinic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCawDe9Jp98xIema2nVO-N6oIPkX0b-H883UELbe1jJkScLr5DvC6h6myL-AUpWpgqJ1vGKe8N7EqG7uVP0VqaE32XPgerHe15zPMC_woOe8LoOO8HGuvz_PtICJh3veX1jd7WCmFqEcT3mwvPUPh4LEXhU6p8d38p8LSK852lEVFGZydBsErLBLcga8qXwp2WTI_Zr-CKOZZhyVSHTgplf4Vs2t11pWSO_G81NjHC1I2Y2DjTpaD9InplJBXzr6jWmndjPOo6xFLOH"/>
+</div>
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+</div>
+</div>
+<!-- For Clients -->
+<div class="flex flex-col lg:flex-row-reverse items-center gap-20">
+<div class="lg:w-1/2">
+<div class="inline-block px-4 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-bold mb-6">CLIENT EXPERIENCE</div>
+<h2 class="text-4xl font-headline font-extrabold mb-6 leading-tight">High-Performance Wellness, <br/>Delivered Without Friction.</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">Your clinical needs, curated into an editorial meal experience. No more calorie counting—just precision nutrition that tastes like premium dining.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="font-medium">Gourmet Clinical Preparation</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="font-medium">Real-time Supplement Syncing</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="font-medium">Personal Wellness Concierge</span>
+</li>
+</ul>
+<button class="text-primary font-bold flex items-center gap-2 group">
+                            See Your Options
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="lg:w-1/2">
+<div class="aspect-video bg-surface-container-high rounded-[2rem] overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover" data-alt="Vibrant healthy salad bowl with clinical precision in ingredients" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6OCq4LrPMrxEzOJD_WRxdN3CbeKjSN9O3GpRL74I8d7xrDIFEoaGTQ5S3GwhBxgQ1Cxft6wq0PgsUI2tJ0CC0APtHbZ8qcyw97UAPCKf2DYanVD2T_R7f8IWrgEa-w5wEAdQL7i-JJEOfJz3AyWvZiRlkEFkm1nqryJ6CPEdvkzdXKhYHYKQSqL4tkuAEO7me98fc4AS4xASyhEb2NPlMKPBD-kKjCPQpoMTpUMU2451-ITaUuCFa57wv7er8mKZ5U9f2e-QEyNZD"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-8">
+<div class="max-w-4xl mx-auto bg-primary rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+<!-- Background pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs><pattern height="20" id="dots" patternunits="userSpaceOnUse" width="20"><circle cx="2" cy="2" fill="#fff" r="1"></circle></pattern></defs>
+<rect fill="url(#dots)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-8 relative z-10">Start Your Journey</h2>
+<p class="text-on-primary-container text-lg mb-12 max-w-xl mx-auto relative z-10">Join thousands of clinical experts and high-performance individuals in redefining the standard of nutrition.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+<button class="bg-white text-primary px-10 py-4 rounded-full font-headline font-bold text-lg hover:bg-surface-container-lowest transition-colors active:scale-95">
+                        Get Started
+                    </button>
+<button class="border-2 border-primary-container text-white px-10 py-4 rounded-full font-headline font-bold text-lg hover:bg-primary-container/30 transition-colors active:scale-95">
+                        <a href="../new_consultation_form/consultation.html">
+                          Consult an Expert
+                        </a>
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f2f4f5] py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-screen-2xl mx-auto font-['Public_Sans'] text-xs tracking-wide">
+<div class="mb-8 md:mb-0">
+<span class="font-['Manrope'] font-bold text-[#005145] text-xl block mb-2">Clinical Curator</span>
+<p class="text-slate-500 max-w-xs">© 2024 Clinical Curator. All rights reserved. Precision nutrition for the modern expert.</p>
+</div>
+<div class="flex flex-wrap gap-8 justify-center">
+<a class="text-slate-500 hover:text-[#005145] transition-opacity hover:opacity-80 duration-200" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-[#005145] transition-opacity hover:opacity-80 duration-200" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-[#005145] transition-opacity hover:opacity-80 duration-200" href="#">Clinical Standards</a>
+<a class="text-slate-500 hover:text-[#005145] transition-opacity hover:opacity-80 duration-200" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-end px-6 pb-6 pt-2 bg-[#f8fafb]/90 backdrop-blur-md z-50 shadow-[0_-10px_40px_rgba(25,28,29,0.06)] rounded-t-[2rem]">
+<div class="flex flex-col items-center justify-center bg-[#005145] text-white rounded-full p-3 mb-2 scale-110">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Public_Sans'] text-[10px] uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">directions_run</span>
+<span class="font-['Public_Sans'] text-[10px] uppercase tracking-widest mt-1">Meals</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">local_mall</span>
+<span class="font-['Public_Sans'] text-[10px] uppercase tracking-widest mt-1">Store</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-['Public_Sans'] text-[10px] uppercase tracking-widest mt-1">Cart</span>
+</div>
+</div>
+</body></html>

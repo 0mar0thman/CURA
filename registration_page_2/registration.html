@@ -1,0 +1,525 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cura - Registration</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Public+Sans:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              tertiary: "#00514a",
+              "on-secondary-fixed": "#001159",
+              "error-container": "#ffdad6",
+              "on-surface": "#191c1d",
+              "primary-fixed": "#8ff5df",
+              "surface-dim": "#d8dadb",
+              "on-secondary-container": "#fffbff",
+              "surface-tint": "#006b5c",
+              "inverse-primary": "#73d8c3",
+              "surface-variant": "#e1e3e4",
+              "on-primary-fixed-variant": "#005045",
+              "on-tertiary-fixed": "#00201d",
+              "on-tertiary-container": "#66eedf",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#e6e8e9",
+              "on-primary-container": "#86ebd5",
+              "tertiary-fixed-dim": "#4fdbcc",
+              "tertiary-container": "#006b62",
+              "secondary-container": "#4967f4",
+              "outline-variant": "#bec9c5",
+              "surface-container": "#eceeef",
+              "primary-container": "#006b5c",
+              "on-primary": "#ffffff",
+              "on-surface-variant": "#3e4946",
+              "primary-fixed-dim": "#73d8c3",
+              surface: "#f8fafb",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#191c1d",
+              "on-error": "#ffffff",
+              "surface-bright": "#f8fafb",
+              outline: "#6e7976",
+              "surface-container-low": "#f2f4f5",
+              "secondary-fixed": "#dee1ff",
+              "tertiary-fixed": "#70f8e8",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed-variant": "#005049",
+              "on-secondary-fixed-variant": "#0031c4",
+              "on-primary-fixed": "#00201b",
+              secondary: "#2b4cda",
+              "inverse-on-surface": "#eff1f2",
+              "surface-container-highest": "#e1e3e4",
+              error: "#ba1a1a",
+              primary: "#005145",
+              background: "#f8fafb",
+              "inverse-surface": "#2e3132",
+              "secondary-fixed-dim": "#bac3ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Public Sans"],
+              label: ["Public Sans"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .editorial-asymmetry {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface font-body text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"
+  >
+    <!-- Global Top Bar (Shared Component) -->
+    <header
+      class="fixed top-0 w-full z-50 bg-[#f8fafb]/80 dark:bg-[#191c1d]/80 backdrop-blur-md shadow-[0px_10px_40px_0px_rgba(25,28,29,0.06)]"
+    >
+      <div
+        class="flex justify-between items-center px-8 py-4 w-full max-w-full mx-auto"
+      >
+        <div
+          class="font-headline text-xl font-bold text-[#005145] dark:text-[#006b5c] tracking-tighter"
+        >
+          Cura
+        </div>
+        <div class="flex items-center gap-6">
+          <nav class="hidden md:flex gap-8 items-center">
+            <a
+              class="text-[#005145] dark:text-[#006b5c] font-semibold transition-opacity duration-200"
+              href="#"
+              >Registration</a
+            >
+            <a
+              class="text-[#191c1d] dark:text-[#e1e3e3] opacity-70 hover:opacity-100 transition-opacity duration-200"
+              href="#"
+              >Solutions</a
+            >
+            <a
+              class="text-[#191c1d] dark:text-[#e1e3e3] opacity-70 hover:opacity-100 transition-opacity duration-200"
+              href="#"
+              >About</a
+            >
+          </nav>
+          <div
+            class="material-symbols-outlined text-[#191c1d] opacity-70 cursor-pointer active:scale-95 transition-transform"
+            data-icon="account_circle"
+          >
+            account_circle
+          </div>
+        </div>
+      </div>
+    </header>
+    <main
+      class="min-h-screen pt-24 pb-20 px-4 md:px-8 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start"
+    >
+      <!-- Left Side: SideNavBar (Shared Component Anchor) -->
+      <aside
+        class="hidden lg:flex flex-col h-screen sticky left-0 top-0 pt-12 w-64 bg-transparent font-['Public_Sans'] text-sm"
+      >
+        <div class="mb-12">
+          <h1
+            class="text-lg font-extrabold text-[#005145] dark:text-[#ffffff] tracking-tight"
+          >
+            Registration
+          </h1>
+          <p class="text-[#50635e] font-medium opacity-60">Health Ecosystem</p>
+        </div>
+        <nav class="space-y-4">
+          <div
+            class="flex items-center gap-3 px-4 py-3 rounded-r-full text-[#005145] dark:text-[#ffffff] font-bold border-r-4 border-[#005145] bg-surface-container-low"
+          >
+            <span class="material-symbols-outlined" data-icon="clinical_notes"
+              >clinical_notes</span
+            >
+            <span>Overview</span>
+          </div>
+          <div
+            class="flex items-center gap-3 px-4 py-3 text-[#50635e] dark:text-[#bec9c5] hover:bg-[#eceeef] dark:hover:bg-[#2e3132] transition-colors duration-200 cursor-pointer"
+          >
+            <span class="material-symbols-outlined" data-icon="medical_services"
+              >medical_services</span
+            >
+            <span>Practitioner Portal</span>
+          </div>
+          <div
+            class="flex items-center gap-3 px-4 py-3 text-[#50635e] dark:text-[#bec9c5] hover:bg-[#eceeef] dark:hover:bg-[#2e3132] transition-colors duration-200 cursor-pointer"
+          >
+            <span class="material-symbols-outlined" data-icon="help_outline"
+              >help_outline</span
+            >
+            <span>Support</span>
+          </div>
+        </nav>
+        <div class="mt-auto pb-24">
+          <div class="p-6 bg-surface-container-low rounded-xl">
+            <p
+              class="text-xs font-semibold uppercase tracking-widest text-outline mb-2"
+            >
+              Quote of the Day
+            </p>
+            <p class="text-on-surface-variant italic leading-relaxed">
+              "The greatest medicine of all is to teach people how not to need
+              it."
+            </p>
+          </div>
+        </div>
+      </aside>
+      <!-- Main Form Canvas -->
+      <div class="flex-1 w-full max-w-4xl mx-auto">
+        <!-- Header Section -->
+        <div class="mb-12 relative">
+          <span
+            class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
+            >New Journey</span
+          >
+          <h2
+            class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface tracking-tighter leading-none mb-6"
+          >
+            Join the <span class="text-primary italic">Cura</span> Circle.
+          </h2>
+          <p class="text-on-surface-variant text-lg max-w-xl leading-relaxed">
+            Select your path to begin. Whether you are providing care or seeking
+            it, Cura orchestrates a seamless wellness experience.
+          </p>
+        </div>
+        <!-- Path Selection (Bento Style) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <label class="group relative cursor-pointer">
+            <input
+              checked=""
+              class="peer sr-only"
+              name="user_type"
+              type="radio"
+              value="practitioner"
+            />
+            <div
+              class="h-full p-8 rounded-2xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-surface-container-lowest transition-all duration-300 peer-checked:ring-4 peer-checked:ring-primary/10"
+            >
+              <div
+                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="medical_information"
+                  >medical_information</span
+                >
+              </div>
+              <h3 class="font-headline text-xl font-bold mb-2">Practitioner</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">
+                For clinicians, therapists, and specialists looking to manage
+                their curated practice.
+              </p>
+            </div>
+          </label>
+          <label class="group relative cursor-pointer">
+            <input
+              class="peer sr-only"
+              name="user_type"
+              type="radio"
+              value="client"
+            />
+            <div
+              class="h-full p-8 rounded-2xl bg-surface-container-low border-2 border-transparent peer-checked:border-primary peer-checked:bg-surface-container-lowest transition-all duration-300 peer-checked:border-secondary peer-checked:ring-4 peer-checked:ring-secondary/10"
+            >
+              <div
+                class="w-12 h-12 rounded-full bg-secondary-fixed/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary"
+                  data-icon="monitoring"
+                  >monitoring</span
+                >
+              </div>
+              <h3 class="font-headline text-xl font-bold mb-2">Client</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">
+                For individuals seeking professional guidance and personalized
+                health optimization.
+              </p>
+            </div>
+          </label>
+        </div>
+        <!-- Registration Form Card -->
+        <div class="bg-surface-container-lowest rounded-3xl p-8 md:p-12">
+          <form class="space-y-10">
+            <!-- General Information -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-bold uppercase tracking-wider text-outline px-1"
+                  >Full Name</label
+                >
+                <input
+                  class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-secondary/30 transition-all text-on-surface placeholder:text-outline/50"
+                  placeholder="Dr. Julian Vane"
+                  type="text"
+                />
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-bold uppercase tracking-wider text-outline px-1"
+                  >Email Address</label
+                >
+                <input
+                  class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-secondary/30 transition-all text-on-surface placeholder:text-outline/50"
+                  placeholder="vane@clinicalcurator.com"
+                  type="email"
+                />
+              </div>
+            </div>
+            <!-- Dynamic Path Fields (Practitioner Default) -->
+            <div class="space-y-8" id="practitioner-fields">
+              <div class="border-l-4 border-primary/20 pl-6 space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div class="space-y-2">
+                    <label
+                      class="text-xs font-bold uppercase tracking-wider text-outline px-1"
+                      >Clinical Credentials</label
+                    >
+                    <input
+                      class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-secondary/30 transition-all"
+                      placeholder="MD, PhD, ND"
+                      type="text"
+                    />
+                  </div>
+                  <div class="space-y-2">
+                    <label
+                      class="text-xs font-bold uppercase tracking-wider text-outline px-1"
+                      >Specialty</label
+                    >
+                    <select
+                      class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-secondary/30 transition-all appearance-none"
+                    >
+                      <option>Functional Medicine</option>
+                      <option>Integrative Oncology</option>
+                      <option>Precision Nutrition</option>
+                      <option>Neurological Health</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="text-xs font-bold uppercase tracking-wider text-outline px-1"
+                    >Clinic Name</label
+                  >
+                  <input
+                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-secondary/30 transition-all"
+                    placeholder="The Vane Institute for Vitality"
+                    type="text"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Client Fields (Hidden by default in static HTML, shown via logic if desired) -->
+            <div class="hidden space-y-8" id="client-fields">
+              <div class="border-l-4 border-secondary/20 pl-6 space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div class="space-y-2">
+                    <label
+                      class="text-xs font-bold uppercase tracking-wider text-outline px-1"
+                      >Date of Birth</label
+                    >
+                    <input
+                      class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-secondary/30 transition-all"
+                      type="date"
+                    />
+                  </div>
+                  <div class="space-y-2 flex gap-4">
+                    <div class="flex-1 space-y-2">
+                      <label
+                        class="text-xs font-bold uppercase tracking-wider text-outline px-1"
+                        >Weight (kg)</label
+                      >
+                      <input
+                        class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-secondary/30 transition-all"
+                        placeholder="70"
+                        type="number"
+                      />
+                    </div>
+                    <div class="flex-1 space-y-2">
+                      <label
+                        class="text-xs font-bold uppercase tracking-wider text-outline px-1"
+                        >Height (cm)</label
+                      >
+                      <input
+                        class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-secondary/30 transition-all"
+                        placeholder="175"
+                        type="number"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="text-xs font-bold uppercase tracking-wider text-outline px-1"
+                    >Health Goals</label
+                  >
+                  <textarea
+                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-secondary/30 transition-all resize-none"
+                    placeholder="Optimizing circadian rhythm and metabolic health..."
+                    rows="3"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <!-- CTA Section -->
+            <div
+              class="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-surface-container"
+            >
+              <div class="text-sm text-on-surface-variant">
+                Already have an account?
+                <a
+                  class="ml-2 px-4 py-2 bg-surface-container-high text-primary font-bold rounded-full hover:bg-primary/10 transition-colors inline-block"
+                  href="#"
+                  >Sign In</a
+                >
+              </div>
+              <button
+                class="w-full md:w-auto px-10 py-4 bg-primary hover:bg-primary-container text-on-primary font-bold rounded-full transition-all active:scale-95 flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+                type="submit"
+              >
+                <span>Complete Registration</span
+                ><span
+                  class="material-symbols-outlined text-sm"
+                  data-icon="arrow_forward"
+                  >arrow_forward</span
+                >
+              </button>
+              <p
+                class="text-[10px] text-outline uppercase tracking-widest mt-2 text-center md:text-right w-full"
+              >
+                Secure Registration for your selected path
+              </p>
+            </div>
+          </form>
+        </div>
+        <!-- Supporting Cards / Bento Content -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            class="md:col-span-2 relative overflow-hidden rounded-3xl h-64 group"
+          >
+            <img
+              alt="Clinical environment"
+              class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              data-alt="a bright modern minimalist medical clinic with clean white surfaces large windows and lush green plants in the background"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeZkXMO-GCbXOErppqtq2VR-MTao81Q6Jgj9Dk396Aavxo5Tua0O5TDrPZy21plYtSVh6FTmN5lAgapl2doiXigJ_bFzYqNnuMYTCgpb-l5H1CGY5VkPOgtSghEOf4nIArqNTex6fH6NsnYIDRlrseso2sxPUC4P1gM3_nDeZm02k-icbpFI4jy8lDwFNQ9nG2USuoaRW7Ti7ynaYMyVyv1MvTBbBPWguroAFWw5jw2CPMs4yO4je-on-CqsQG5yTJ00YB5hUJ5gAF"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"
+            ></div>
+            <div class="absolute bottom-6 left-6 text-on-primary">
+              <p class="text-xs font-bold uppercase tracking-widest mb-1">
+                Elite Infrastructure
+              </p>
+              <h4 class="font-headline text-xl font-bold">
+                Secure Health Ecosystem
+              </h4>
+            </div>
+          </div>
+          <div
+            class="bg-secondary-fixed rounded-3xl p-8 flex flex-col justify-center"
+          >
+            <div
+              class="material-symbols-outlined text-secondary text-4xl mb-4"
+              data-icon="verified_user"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+            >
+              verified_user
+            </div>
+            <h4
+              class="font-headline text-lg font-bold text-on-secondary-fixed leading-tight"
+            >
+              HIPAA &amp; GDPR Compliant
+            </h4>
+            <p class="text-on-secondary-fixed-variant text-sm mt-2">
+              Your data is curated with the highest security standards.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Fixed Floating Metric Display (Aesthetic Element) -->
+    <div class="fixed bottom-8 right-8 hidden xl:block">
+      <div
+        class="bg-surface-container-lowest/80 backdrop-blur-md p-6 rounded-3xl shadow-[0px_10px_40px_0px_rgba(25,28,29,0.06)] border border-outline-variant/15 w-64"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-bold text-outline uppercase"
+            >Active Nodes</span
+          >
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        </div>
+        <div class="space-y-4">
+          <div
+            class="h-2 w-full bg-surface-container rounded-full overflow-hidden"
+          >
+            <div class="h-full bg-primary w-3/4"></div>
+          </div>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Connecting to
+            <span class="text-primary font-bold">1,248</span> practitioners
+            worldwide.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Bottom Navigation (Shared Component Responsive Pivot) -->
+    <nav
+      class="md:hidden fixed bottom-0 left-0 right-0 bg-surface/80 backdrop-blur-md border-t border-outline-variant/10 px-8 py-4 flex justify-between items-center z-50"
+    >
+      <div class="flex flex-col items-center gap-1 text-primary">
+        <span
+          class="material-symbols-outlined"
+          data-icon="clinical_notes"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >clinical_notes</span
+        >
+        <span class="text-[10px] font-bold uppercase">Join</span>
+      </div>
+      <div class="flex flex-col items-center gap-1 text-outline opacity-50">
+        <span class="material-symbols-outlined" data-icon="medical_services"
+          >medical_services</span
+        >
+        <span class="text-[10px] font-bold uppercase">Portal</span>
+      </div>
+      <div class="flex flex-col items-center gap-1 text-outline opacity-50">
+        <span class="material-symbols-outlined" data-icon="help_outline"
+          >help_outline</span
+        >
+        <span class="text-[10px] font-bold uppercase">Help</span>
+      </div>
+    </nav>
+  </body>
+</html>

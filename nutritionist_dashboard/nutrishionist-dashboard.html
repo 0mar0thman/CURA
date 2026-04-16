@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Curator - Nutritionist Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#93000a",
+              "outline-variant": "#bec9c5",
+              "primary-fixed": "#8ff5df",
+              "on-tertiary-fixed": "#00201d",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#00514a",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#86ebd5",
+              "tertiary-container": "#006b62",
+              "on-primary-fixed": "#00201b",
+              "primary-container": "#006b5c",
+              "error": "#ba1a1a",
+              "on-background": "#191c1d",
+              "surface-container-high": "#e6e8e9",
+              "surface-container-low": "#f2f4f5",
+              "on-surface-variant": "#3e4946",
+              "on-secondary-container": "#fffbff",
+              "surface-variant": "#e1e3e4",
+              "background": "#f8fafb",
+              "tertiary-fixed-dim": "#4fdbcc",
+              "secondary-fixed-dim": "#bac3ff",
+              "outline": "#6e7976",
+              "surface-bright": "#f8fafb",
+              "surface-container-highest": "#e1e3e4",
+              "on-error": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-tertiary-container": "#66eedf",
+              "secondary-container": "#4967f4",
+              "on-tertiary-fixed-variant": "#005049",
+              "primary": "#005145",
+              "inverse-on-surface": "#eff1f2",
+              "surface-dim": "#d8dadb",
+              "inverse-surface": "#2e3132",
+              "secondary": "#2b4cda",
+              "on-surface": "#191c1d",
+              "surface-container": "#eceeef",
+              "primary-fixed-dim": "#73d8c3",
+              "tertiary-fixed": "#70f8e8",
+              "secondary-fixed": "#dee1ff",
+              "error-container": "#ffdad6",
+              "surface-tint": "#006b5c",
+              "surface": "#f8fafb",
+              "on-secondary-fixed": "#001159",
+              "on-secondary-fixed-variant": "#0031c4",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed-variant": "#005045",
+              "inverse-primary": "#73d8c3"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Public Sans"],
+              "label": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: #f8fafb;
+            color: #191c1d;
+        }
+        h1, h2, h3 {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<aside class="h-full w-64 fixed left-0 top-0 z-40 bg-surface-container-low flex flex-col py-8 pl-4 transition-transform duration-300 ease-in-out">
+<div class="mb-10 pl-4">
+<h1 class="font-['Manrope'] font-extrabold text-[#005145] text-2xl tracking-tighter">Clinical Curator</h1>
+<p class="text-xs font-medium text-outline uppercase tracking-widest mt-1">Clinical Wellness</p>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center px-4 py-3 text-[#005145] font-bold bg-[#ffffff] rounded-r-full mr-4 transition-transform duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 hover:translate-x-1 hover:bg-white/50 transition-all duration-300 rounded-r-full mr-4" href="../client_meal_plan_tracking/client-meal.html">
+<span class="material-symbols-outlined mr-3">restaurant</span>
+                Meal Plan
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 hover:translate-x-1 hover:bg-white/50 transition-all duration-300 rounded-r-full mr-4" href="../meal_delivery_storefront/marketplace.html">
+<span class="material-symbols-outlined mr-3">storefront</span>
+                Storefront
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 hover:translate-x-1 hover:bg-white/50 transition-all duration-300 rounded-r-full mr-4" href="#">
+<span class="material-symbols-outlined mr-3">receipt_long</span>
+                Orders
+            </a>
+</nav>
+<div class="mt-auto pt-8 border-t border-outline-variant/10 mr-4">
+<div class="bg-primary p-4 rounded-xl mb-6 relative overflow-hidden">
+<div class="absolute -right-2 -top-2 w-16 h-16 bg-primary-container rounded-full opacity-20"></div>
+<p class="text-white text-xs font-bold mb-2 uppercase tracking-tighter">Premium Access</p>
+<button class="w-full bg-white text-primary text-xs font-bold py-2 px-4 rounded-full active:scale-95 transition-transform">Upgrade to Premium</button>
+</div>
+<a class="flex items-center px-4 py-2 text-slate-600 hover:text-primary transition-colors text-sm" href="#">
+<span class="material-symbols-outlined mr-3 text-lg">settings</span>
+                Settings
+            </a>
+<a class="flex items-center px-4 py-2 text-slate-600 hover:text-primary transition-colors text-sm" href="#">
+<span class="material-symbols-outlined mr-3 text-lg">help_outline</span>
+                Support
+            </a>
+</div>
+</aside>
+<main class="ml-64 min-h-screen">
+<header class="fixed top-0 right-0 left-64 z-30 bg-[#f8fafb]/80 backdrop-blur-xl h-16 flex items-center justify-between px-8 shadow-[0_10px_40px_rgba(25,28,29,0.06)]">
+<div class="flex items-center gap-4">
+<h2 class="font-headline text-xl font-bold tracking-tight text-primary">Practitioner Portal</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<input class="bg-surface-container border-none rounded-full px-5 py-1.5 text-sm w-64 focus:ring-2 focus:ring-secondary/30 transition-all" placeholder="Search clients..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1.5 text-outline text-xl">search</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-slate-500 hover:bg-surface-container rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<div class="h-8 w-8 rounded-full bg-secondary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Female clinical nutritionist professional profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsaH0SWr2jvH234OzgT6Bls15cPRxOm_uQPTdcoPdJrIVuiXRp0h1LBZhCwbC8SR2GTMRxYy_HZJfPNhJQ-eb_eZoiiF87WqYMVi5BrORy3SodBR2xPcLrZxWQe6JMpiNjSBtLc2N0UxurUQw0wMF8jSV3Vg8VX7Ak9jgGqkpXMqtDgbR0dRKbsgeNQ4K4SBDsegwnMj25PM--N3QmoWoRhzA2e130utxddhdO0aybgXsAeNFjMDx_suoA3-esnqlrgRBakTyhHncx"/>
+</div>
+</div>
+</div>
+</header>
+<div class="pt-24 px-10 pb-20">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h3 class="text-4xl font-headline font-extrabold tracking-tighter text-on-surface mb-2">Patient Ecosystem</h3>
+<p class="text-on-surface-variant font-body">Manage clinical outcomes and nutritional progression.</p>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-white px-8 py-4 rounded-full font-headline font-bold text-sm shadow-xl active:scale-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+                    Create New Meal Plan
+                </button>
+</div>
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-12 lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-2xl p-8">
+<div class="flex items-center justify-between mb-8">
+<h4 class="text-lg font-headline font-bold">Active Client Roster</h4>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 rounded-full text-xs font-bold bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors">Filter</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-bold bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors">Export</button>
+</div>
+</div>
+<div class="space-y-4">
+<div class="grid grid-cols-12 gap-4 items-center p-4 rounded-xl hover:bg-surface-container-low transition-colors group">
+<div class="col-span-4 flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of male client James Wilson" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJyAIOP59eKLApJngGSDmoTUdGTpQ9CniBL_BQX3RhNzuw9G2cxwQsty3Zggpr0_YZQtQE7Y0yYMSUOLaXJLNkxqQZc1gaFZhdoMKFq6G0a7KvOP9SbflFoARNCl_R_xPWeVUf4N4hvD6ST5WdqHXxL3r2jN5BxULoUe8YyihH2fqYlhnxZ17YYhgrZsLNxWlabDmPebmA9c34bCCAj4KkhnBtevBRqW0AuFIqgcdQRA3Wj7GXxxLNHwVrMGSmg8WZ2yzhkYtMif34"/>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">James Wilson</p>
+<p class="text-xs text-outline">Metabolic Health • ID: #9921</p>
+</div>
+</div>
+<div class="col-span-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-sm font-medium text-on-surface-variant">Stabilizing</span>
+</div>
+<p class="text-[10px] uppercase tracking-wider text-outline mt-1 font-bold">Health Status</p>
+</div>
+<div class="col-span-3">
+<p class="text-sm font-bold text-on-surface">Oct 24, 2023</p>
+<p class="text-[10px] uppercase tracking-wider text-outline mt-1 font-bold">Last Plan Update</p>
+</div>
+<div class="col-span-2 flex justify-end">
+<button class="p-2 text-outline hover:text-primary transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-center p-4 rounded-xl hover:bg-surface-container-low transition-colors group">
+<div class="col-span-4 flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of female client Elena Rodriguez" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ85ZFVTeIIB2uodt2-8Qtn4bG7q8WgJqr-ZhW8qN_sWYghRz3PiX3NRmkduy7KEkxF0974g_OWxN6qqVImhc2vJkhrdv_7QpW_0rTCux5ISpy4HwdoTuHIFPqbkd2YE3YN7rubKCflEpwJU2RtpJlW3pUpSFRbtzRU5SiXnhvIRYUyMvR2rix9DCUxV17IU1N5Iz6zUvYv3p8U3mrWezeTp7i1NChd1JMB_e9k8c_bnXUo671u-b5F6mXLOE7d_j_IHDLG7RE6A4e"/>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">Elena Rodriguez</p>
+<p class="text-xs text-outline">Weight Mgmt • ID: #8842</p>
+</div>
+</div>
+<div class="col-span-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-sm font-medium text-on-surface-variant">Active Progression</span>
+</div>
+<p class="text-[10px] uppercase tracking-wider text-outline mt-1 font-bold">Health Status</p>
+</div>
+<div class="col-span-3">
+<p class="text-sm font-bold text-on-surface">Oct 21, 2023</p>
+<p class="text-[10px] uppercase tracking-wider text-outline mt-1 font-bold">Last Plan Update</p>
+</div>
+<div class="col-span-2 flex justify-end">
+<button class="p-2 text-outline hover:text-primary transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-center p-4 rounded-xl hover:bg-surface-container-low transition-colors group">
+<div class="col-span-4 flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of female client Sarah Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsD4uFMK_m8tUEhc78-gG66bPRVezNCgmFhLeT9yJhp9iyy5fANN8EQew70s7T5mKwioCT1mo_3t1jm5QGFhiIj6MrQmFxhXQ-_FFmxEbplCcNXFPUZ7I-vp4VJWl8JfzG8ZiVqBP-mDlzOUvsbRRAFstaqTk4HBdNLWuhCnkQmHt__5dgPmq5B6ecVTFwDDbJApJiewRf6QWyUp82EyPfjT2oKuH4s98hyEogT76W14hRd3dE060KY4KufEbRhxaspfIKy7jRJkPy"/>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">Sarah Chen</p>
+<p class="text-xs text-outline">Gut Health • ID: #7710</p>
+</div>
+</div>
+<div class="col-span-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-sm font-medium text-on-surface-variant">Review Required</span>
+</div>
+<p class="text-[10px] uppercase tracking-wider text-outline mt-1 font-bold">Health Status</p>
+</div>
+<div class="col-span-3">
+<p class="text-sm font-bold text-on-surface">Oct 14, 2023</p>
+<p class="text-[10px] uppercase tracking-wider text-outline mt-1 font-bold">Last Plan Update</p>
+</div>
+<div class="col-span-2 flex justify-end">
+<button class="p-2 text-outline hover:text-primary transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-center p-4 rounded-xl hover:bg-surface-container-low transition-colors group">
+<div class="col-span-4 flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of male client Robert Fox" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtFE1vwGvzwfSg8q9EggZ5rlvUMVhFPSNKKv1lgRSp1feoo886Cave8U0voEpg8_fJivkDzn9mHKgay59Z-3fqo1nNxQPPHiX6Gcfsq-9VzgGR1JQLM0ItKtPAduIYlddjK74jZ7YVmOiW2G_A9300NXEx4aWxbWAF8fXcsMnriL2ySVqiogyc8q8uq4f3dSSg5a9OhN8qnqIsYq1O-vRuQ_mYb2C5v9Tk_b9b6Nmupz3ZUlCH37EPY6bihxwpDh4SLPzI76lFZTRW"/>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">Robert Fox</p>
+<p class="text-xs text-outline">Sports Nutrition • ID: #4401</p>
+</div>
+</div>
+<div class="col-span-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-sm font-medium text-on-surface-variant">Optimizing</span>
+</div>
+<p class="text-[10px] uppercase tracking-wider text-outline mt-1 font-bold">Health Status</p>
+</div>
+<div class="col-span-3">
+<p class="text-sm font-bold text-on-surface">Oct 26, 2023</p>
+<p class="text-[10px] uppercase tracking-wider text-outline mt-1 font-bold">Last Plan Update</p>
+</div>
+<div class="col-span-2 flex justify-end">
+<button class="p-2 text-outline hover:text-primary transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-primary text-white p-8 rounded-2xl relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="text-lg font-headline font-bold mb-1">Clinical Insight</h4>
+<p class="text-on-primary-container text-sm leading-relaxed mb-6">Patient Sarah Chen's gut flora biomarkers indicate a 12% shift toward dysbiosis. Recommend fiber adjustment.</p>
+<button class="bg-primary-container text-white px-6 py-2.5 rounded-full text-xs font-bold active:scale-95 transition-transform">Action Report</button>
+</div>
+<div class="absolute -right-8 -bottom-8 w-40 h-40 bg-white/5 rounded-full"></div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-2xl">
+<h4 class="text-lg font-headline font-bold mb-6">Quick Metrics</h4>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-secondary-fixed text-secondary rounded-lg">
+<span class="material-symbols-outlined text-xl">group</span>
+</div>
+<span class="text-sm font-medium">Total Clients</span>
+</div>
+<span class="font-headline font-extrabold text-xl">42</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary-fixed text-primary rounded-lg">
+<span class="material-symbols-outlined text-xl">pending_actions</span>
+</div>
+<span class="text-sm font-medium">Pending Reviews</span>
+</div>
+<span class="font-headline font-extrabold text-xl">8</span>
+</div>
+<div class="pt-4 mt-4 border-t border-outline-variant/20">
+<p class="text-[10px] uppercase tracking-widest text-outline font-bold mb-3">Goal Completion Avg</p>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[78%]"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="text-[10px] font-bold">78% Monthly Average</span>
+<span class="text-[10px] font-bold text-primary">+4.2%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<div>
+<h5 class="text-sm font-bold">Curated Plan Drafts</h5>
+<p class="text-[10px] text-outline">3 AI-assisted templates ready</p>
+</div>
+</div>
+<button class="w-full py-2 border-2 border-dashed border-outline-variant rounded-xl text-xs font-bold text-outline hover:border-primary hover:text-primary transition-all">
+                            View All Drafts
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="md:hidden">
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-end px-6 pb-6 pt-2 bg-[#f8fafb]/90 backdrop-blur-md z-50 shadow-[0_-10px_40px_rgba(25,28,29,0.06)]">
+<a class="flex flex-col items-center justify-center bg-[#005145] text-white rounded-full p-3 mb-2 scale-110" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="../client_meal_plan_tracking/client-meal.html">
+<span class="material-symbols-outlined">directions_run</span>
+<span class="text-[10px] uppercase tracking-widest mt-1">Meals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="../meal_delivery_storefront/marketplace.html">
+<span class="material-symbols-outlined">local_mall</span>
+<span class="text-[10px] uppercase tracking-widest mt-1">Store</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="../checkout_payment/payment.html">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-[10px] uppercase tracking-widest mt-1">Cart</span>
+</a>
+</nav>
+</div>
+</body></html>

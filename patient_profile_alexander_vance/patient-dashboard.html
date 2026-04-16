@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alexander Vance - Patient Profile | Clinical Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Public+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e1e3e4",
+                        "surface-tint": "#006b5c",
+                        "secondary-fixed": "#dee1ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#005045",
+                        "background": "#f8fafb",
+                        "secondary-container": "#4967f4",
+                        "surface-container-low": "#f2f4f5",
+                        "on-surface-variant": "#3e4946",
+                        "outline": "#6e7976",
+                        "primary-fixed": "#8ff5df",
+                        "primary": "#005145",
+                        "secondary-fixed-dim": "#bac3ff",
+                        "tertiary-fixed-dim": "#4fdbcc",
+                        "on-secondary-container": "#fffbff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#00514a",
+                        "tertiary-fixed": "#70f8e8",
+                        "tertiary-container": "#006b62",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#001159",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#73d8c3",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-tertiary-container": "#66eedf",
+                        "error": "#ba1a1a",
+                        "primary-container": "#006b5c",
+                        "on-primary-fixed": "#00201b",
+                        "on-background": "#191c1d",
+                        "surface": "#f8fafb",
+                        "surface-container-high": "#e6e8e9",
+                        "on-surface": "#191c1d",
+                        "inverse-on-surface": "#eff1f2",
+                        "secondary": "#2b4cda",
+                        "outline-variant": "#bec9c5",
+                        "on-primary-container": "#86ebd5",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d8dadb",
+                        "on-secondary-fixed-variant": "#0031c4",
+                        "surface-container": "#eceeef",
+                        "inverse-primary": "#73d8c3",
+                        "inverse-surface": "#2e3132",
+                        "surface-bright": "#f8fafb",
+                        "on-tertiary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        body {
+            font-family: 'Public Sans', sans-serif;
+            color: #191c1d;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm shadow-emerald-900/5 transition-all duration-200">
+<div class="flex items-center justify-between px-8 h-16 w-full mx-auto max-w-screen-2xl">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-emerald-900 tracking-tight font-manrope">Clinical Curator</span>
+<nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+<a class="text-emerald-900 border-b-2 border-emerald-900 pb-1 font-manrope" href="#">Patients</a>
+<a class="text-slate-500 hover:text-emerald-800 transition-colors font-manrope" href="#">Protocols</a>
+<a class="text-slate-500 hover:text-emerald-800 transition-colors font-manrope" href="#">Analytics</a>
+<a class="text-slate-500 hover:text-emerald-800 transition-colors font-manrope" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-emerald-50/50 rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-emerald-900" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-emerald-50/50 rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-emerald-900" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden ml-2 bg-emerald-100 border border-emerald-200">
+<img alt="Practitioner Profile" class="w-full h-full object-cover" data-alt="Professional clinical practitioner portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_iQCip4sg3pXWOYv8yy9_k62OT53vM9s4jV6Qpr6noZgiDNmzMPQ4KzKyEOjyQ_JD3QSOs2uMpCILGCT6JNQa9zNTJK2tAeUdCZl0DMjxiwT_UbK1CYrSF6Eb0iWoNF0b6vfH812jq4RKTXHIpNwHTOTrXmm4SKHdlePKp9_vXK0UKSYTTjpbG_ff-AaEc8jUZmb1xuUP8o7e6y3miEfFgY04c71nqX0AXT6gtQmXTqikWKSMkXpcXJ-8qnmwm-zISiUTJHVj9bix"/>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-16 bg-slate-50 flex flex-col py-8 pr-4 border-r border-slate-200/50 hidden lg:flex">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-slate-200">
+<img alt="Patient Avatar" class="w-full h-full object-cover" data-alt="Profile photo of Alexander Vance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVR_kzrrCAVUx3pHpxW5jijF9FbrUm8O3XOSaXtGhsrKbR5mUJyQHWBCtnxXOOLJDxk2Ad2l9ZPOpUERRucR9mNdnQSlp_2OmOqwr-2Ku03DC5apxB3Otrahd8TMyp22VpfAokc7UhPQKhYYWfBpvyyqcdOp2QMhgP2V8aU-zatZ6aAxunfz7Z9QDtrT9KZ00QsW777ob2-Q_cpApDLWpYeYPELqOfqQnenCD_S82lSBgwQSzduX90rO8Sf02COJcNtulwdF-ob40P"/>
+</div>
+<div>
+<h3 class="text-emerald-900 font-bold text-sm font-manrope">Alexander Vance</h3>
+<p class="text-slate-500 text-xs font-medium">ID: #88291-B</p>
+</div>
+</div>
+<button class="w-full py-2.5 bg-primary text-on-primary rounded-full text-xs font-bold font-manrope tracking-wide shadow-md transition-all active:scale-95 hover:bg-primary-container">
+                Adjust Protocols
+            </button>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:translate-x-1 transition-transform text-sm font-medium font-manrope" href="../nutritionist_dashboard/nutrishionist-dashboard.html">
+<span class="material-symbols-outlined text-emerald-800" data-icon="dashboard">dashboard</span>
+                Overview
+            </a>
+<a class="flex items-center gap-3 px-6 py-3 bg-white text-emerald-900 font-bold shadow-sm rounded-r-full text-sm font-manrope" href="#">
+<span class="material-symbols-outlined text-emerald-900" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                Clinical Data
+            </a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:translate-x-1 transition-transform text-sm font-medium font-manrope" href="../client_meal_plan_tracking/client-meal.html">
+<span class="material-symbols-outlined text-emerald-800" data-icon="restaurant">restaurant</span>
+                Meal Plans
+            </a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:translate-x-1 transition-transform text-sm font-medium font-manrope" href="#">
+<span class="material-symbols-outlined text-emerald-800" data-icon="pill">pill</span>
+                Supplement Log
+            </a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:translate-x-1 transition-transform text-sm font-medium font-manrope" href="../nutritionist_message_center/message-center.html">
+<span class="material-symbols-outlined text-emerald-800" data-icon="chat_bubble">chat_bubble</span>
+                Messages
+            </a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="lg:ml-64 pt-24 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<p class="text-emerald-800 font-semibold tracking-widest text-xs uppercase mb-2 font-manrope">Patient Management</p>
+<h1 class="text-4xl font-extrabold text-on-surface tracking-tight font-manrope">Alexander Vance — Patient Profile</h1>
+<p class="text-slate-500 mt-2 font-medium">Last synced: Today at 08:45 AM via Oura &amp; Dexcom G7</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-lowest text-on-surface font-semibold rounded-full text-sm border-0 transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="ios_share">ios_share</span>
+                    Export PDF
+                </button>
+<button class="flex items-center gap-2 px-6 py-2.5 bg-secondary-container text-on-secondary-container font-bold rounded-full text-sm transition-all active:scale-95 shadow-lg">
+<span class="material-symbols-outlined text-lg" data-icon="schedule">schedule</span>
+                    Next Consult
+                </button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+<!-- Clinical Summary Cards -->
+<div class="md:col-span-12 lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- HBA1C -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border-0 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="bloodtype">bloodtype</span>
+</div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">HBA1C</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-extrabold text-primary font-manrope">5.4%</span>
+<span class="text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded text-[10px] font-bold uppercase">Optimal</span>
+</div>
+<div class="mt-4 h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+<!-- Body Fat -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border-0">
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">Body Fat %</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-extrabold text-on-surface font-manrope">22.8%</span>
+<span class="text-emerald-600 flex items-center text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_down">trending_down</span>
+                            1.2%
+                        </span>
+</div>
+<p class="text-[11px] text-slate-400 mt-4 font-medium italic">Measured via DEXA 14 days ago</p>
+</div>
+<!-- Weight Trend -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border-0 overflow-hidden">
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">Weight Trend</p>
+<div class="flex justify-between items-end mb-2">
+<span class="text-2xl font-extrabold text-on-surface font-manrope">168.4 <span class="text-sm font-medium text-slate-400">lbs</span></span>
+<span class="text-xs font-bold text-slate-400">Target: 164</span>
+</div>
+<!-- Simplified Chart SVG -->
+<svg class="w-full h-12 text-emerald-500" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0,5 Q25,2 50,8 T100,15" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+</svg>
+</div>
+</div>
+<!-- Side Card: Active Protocol -->
+<div class="md:col-span-12 lg:col-span-4 lg:row-span-2">
+<div class="bg-primary p-8 rounded-[2rem] text-on-primary shadow-xl shadow-emerald-900/10 h-full flex flex-col">
+<div class="mb-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-xs font-bold uppercase tracking-widest text-emerald-200 font-manrope">Current Protocol</span>
+</div>
+<h2 class="text-2xl font-bold font-manrope leading-tight mb-2">Low-GI Inflammation Support</h2>
+<p class="text-emerald-100/80 text-sm leading-relaxed">Focusing on phase 2 metabolic detoxification and glycemic variability stabilization.</p>
+</div>
+<div class="space-y-6 flex-grow">
+<div>
+<div class="flex justify-between text-xs font-bold mb-2 text-emerald-200 font-manrope">
+<span>Timeline</span>
+<span>Week 4 of 12</span>
+</div>
+<div class="h-2 w-full bg-emerald-900/30 rounded-full">
+<div class="h-full bg-emerald-400 rounded-full" style="width: 33%;"></div>
+</div>
+</div>
+<div class="bg-emerald-900/20 p-4 rounded-2xl border border-emerald-800/30">
+<h4 class="text-xs font-bold uppercase mb-3 text-emerald-300 font-manrope">Critical Habits</h4>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-emerald-400" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    12h Fasting Window
+                                </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-emerald-400" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    High-Fiber Breakfast
+                                </li>
+<li class="flex items-center gap-3 text-sm opacity-50">
+<span class="material-symbols-outlined" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                    Zone 2 Training (3x/wk)
+                                </li>
+</ul>
+</div>
+</div>
+<button class="mt-8 w-full py-4 bg-white text-emerald-900 font-extrabold rounded-2xl text-sm transition-all active:scale-95 shadow-md">
+                        Adjust Protocol Settings
+                    </button>
+</div>
+</div>
+<!-- Bio-Markers Section -->
+<div class="md:col-span-12 lg:col-span-8 bg-surface-container-low p-8 rounded-[2rem]">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-bold font-manrope">Key Bio-Markers</h3>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 bg-surface-container-lowest rounded-lg text-xs font-bold shadow-sm">Glucose</button>
+<button class="px-3 py-1.5 text-slate-500 rounded-lg text-xs font-bold">Inflammation</button>
+<button class="px-3 py-1.5 text-slate-500 rounded-lg text-xs font-bold">Lipids</button>
+</div>
+</div>
+<div class="relative bg-surface-container-lowest rounded-2xl p-6 h-64 flex flex-col justify-end">
+<!-- Placeholder Chart visualization -->
+<div class="absolute inset-x-6 top-8 bottom-12 flex items-end gap-1">
+<div class="flex-1 bg-emerald-50 rounded-t-lg h-[40%] hover:bg-emerald-100 transition-colors cursor-pointer group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-emerald-900 text-white text-[10px] px-2 py-1 rounded">88 mg/dL</div>
+</div>
+<div class="flex-1 bg-emerald-100 rounded-t-lg h-[45%]"></div>
+<div class="flex-1 bg-emerald-200 rounded-t-lg h-[60%]"></div>
+<div class="flex-1 bg-emerald-300 rounded-t-lg h-[75%]"></div>
+<div class="flex-1 bg-emerald-400 rounded-t-lg h-[55%]"></div>
+<div class="flex-1 bg-emerald-500 rounded-t-lg h-[40%]"></div>
+<div class="flex-1 bg-emerald-400 rounded-t-lg h-[35%]"></div>
+<div class="flex-1 bg-emerald-300 rounded-t-lg h-[50%]"></div>
+<div class="flex-1 bg-emerald-200 rounded-t-lg h-[65%]"></div>
+<div class="flex-1 bg-emerald-100 rounded-t-lg h-[80%]"></div>
+<div class="flex-1 bg-emerald-200 rounded-t-lg h-[55%]"></div>
+<div class="flex-1 bg-emerald-300 rounded-t-lg h-[40%]"></div>
+<div class="flex-1 bg-emerald-400 rounded-t-lg h-[30%]"></div>
+<div class="flex-1 bg-emerald-500 rounded-t-lg h-[25%]"></div>
+</div>
+<!-- Reference Line -->
+<div class="absolute inset-x-0 top-[40%] border-t border-dashed border-emerald-900/10 z-0">
+<span class="absolute right-6 -top-2 text-[9px] font-bold text-emerald-900/30 uppercase">Optimal Range Upper Limit</span>
+</div>
+<div class="flex justify-between mt-4 px-2 text-[10px] font-bold text-slate-400 uppercase tracking-tighter">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+<div class="bg-surface-container-lowest p-4 rounded-xl">
+<p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Mean Glucose</p>
+<p class="text-lg font-bold text-emerald-900 font-manrope">92 mg/dL</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl">
+<p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Time in Range</p>
+<p class="text-lg font-bold text-emerald-900 font-manrope">94%</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl">
+<p class="text-[10px] font-bold text-slate-400 uppercase mb-1">CRP (Inflammation)</p>
+<p class="text-lg font-bold text-emerald-900 font-manrope">0.8 mg/L</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl">
+<p class="text-[10px] font-bold text-slate-400 uppercase mb-1">ApoB/A1 Ratio</p>
+<p class="text-lg font-bold text-emerald-900 font-manrope">0.42</p>
+</div>
+</div>
+</div>
+<!-- Supplement Log -->
+<div class="md:col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm border border-slate-100">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold font-manrope">Supplement Log</h3>
+<span class="text-[10px] font-bold px-2 py-1 bg-emerald-50 text-emerald-700 rounded-lg">98% Compliance</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl hover:bg-emerald-50 transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-emerald-900 shadow-sm">
+<span class="material-symbols-outlined" data-icon="pill">pill</span>
+</div>
+<div>
+<p class="text-sm font-bold text-emerald-900">Magnesium Glycinate</p>
+<p class="text-[10px] text-slate-500 font-medium">400mg • Before Sleep</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-emerald-600" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl hover:bg-emerald-50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-emerald-900 shadow-sm">
+<span class="material-symbols-outlined" data-icon="sunny">sunny</span>
+</div>
+<div>
+<p class="text-sm font-bold text-emerald-900">Vitamin D3 + K2</p>
+<p class="text-[10px] text-slate-500 font-medium">5,000 IU • With Breakfast</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-emerald-600" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl hover:bg-emerald-50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-emerald-900 shadow-sm">
+<span class="material-symbols-outlined" data-icon="water_drop">water_drop</span>
+</div>
+<div>
+<p class="text-sm font-bold text-emerald-900">Omega-3 (EPA/DHA)</p>
+<p class="text-[10px] text-slate-500 font-medium">2,000mg • With Meal</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-emerald-600" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Communication Section -->
+<div class="bg-secondary-fixed p-8 rounded-[2rem] shadow-sm relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-xl font-bold font-manrope text-on-secondary-fixed mb-2">Connect</h3>
+<p class="text-sm text-on-secondary-fixed/70 mb-6">Send a secure message or update clinical notes for Alexander.</p>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center gap-2 p-4 bg-white/50 hover:bg-white rounded-2xl transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-on-secondary-fixed group-hover:scale-110 transition-transform" data-icon="mail">mail</span>
+<span class="text-xs font-bold text-on-secondary-fixed">Message</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-4 bg-white/50 hover:bg-white rounded-2xl transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-on-secondary-fixed group-hover:scale-110 transition-transform" data-icon="note_add">note_add</span>
+<span class="text-xs font-bold text-on-secondary-fixed">Log Note</span>
+</button>
+</div>
+</div>
+<!-- Abstract Background Graphic -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-secondary-container/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+<!-- Patient History Timeline -->
+<div class="md:col-span-12 lg:col-span-8 bg-surface-container-low p-8 rounded-[2rem]">
+<h3 class="text-xl font-bold font-manrope mb-8">Clinical Timeline</h3>
+<div class="space-y-0 relative">
+<!-- Timeline Line -->
+<div class="absolute left-4 top-2 bottom-2 w-px bg-slate-300"></div>
+<!-- Timeline Item 1 -->
+<div class="relative pl-12 pb-10">
+<div class="absolute left-[11px] top-1 w-2.5 h-2.5 rounded-full bg-emerald-600 border-2 border-white ring-4 ring-emerald-50"></div>
+<div class="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
+<div>
+<h4 class="text-sm font-bold text-on-surface">Comprehensive Blood Panel (Q3 Review)</h4>
+<p class="text-xs text-slate-500 mt-1 leading-relaxed">Markers reviewed: Glucose, HbA1c, hs-CRP, CBC, Metabolic Panel. All markers trending towards optimal range except Vitamin D which remains slightly suboptimal (38 ng/mL).</p>
+</div>
+<span class="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full whitespace-nowrap">OCT 14, 2023</span>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative pl-12 pb-10">
+<div class="absolute left-[11px] top-1 w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white ring-4 ring-slate-50"></div>
+<div class="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
+<div>
+<h4 class="text-sm font-bold text-on-surface">Protocol Adjustment: Insulin Sensitivity Focus</h4>
+<p class="text-xs text-slate-500 mt-1 leading-relaxed">Transitioned to "Low-GI Inflammation Support" protocol. Introduced Berberine Phytosome (500mg/day) to support glycemic control.</p>
+</div>
+<span class="text-[11px] font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-full whitespace-nowrap">SEP 28, 2023</span>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative pl-12">
+<div class="absolute left-[11px] top-1 w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-white ring-4 ring-slate-50"></div>
+<div class="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
+<div>
+<h4 class="text-sm font-bold text-on-surface">Initial Consultation &amp; Onboarding</h4>
+<p class="text-xs text-slate-500 mt-1 leading-relaxed">Patient reports fatigue and weight plateau. Baseline DEXA scan completed. Goals established: Reduce visceral fat and improve morning glucose levels.</p>
+</div>
+<span class="text-[11px] font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-full whitespace-nowrap">AUG 15, 2023</span>
+</div>
+</div>
+</div>
+<button class="mt-10 w-full py-3 bg-white border border-slate-200 text-slate-500 font-bold rounded-2xl text-xs hover:bg-slate-50 transition-all active:scale-[0.99]">
+                    View Full Patient History
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-md px-6 py-4 flex items-center justify-between z-50 shadow-[0_-4px_24px_rgba(0,0,0,0.05)] border-t border-slate-100">
+<a class="flex flex-col items-center gap-1 text-emerald-900" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] font-bold">Stats</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="../client_meal_plan_tracking/client-meal.html">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="text-[10px] font-bold">Plan</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="../nutritionist_message_center/message-center.html">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="text-[10px] font-bold">Chat</span>
+</a>
+</nav>
+</body></html>

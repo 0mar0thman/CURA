@@ -1,0 +1,170 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Login | Clinical Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#4967f4",
+                        "on-secondary-fixed-variant": "#0031c4",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#4fdbcc",
+                        "surface-dim": "#d8dadb",
+                        "surface-tint": "#006b5c",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#bec9c5",
+                        "primary": "#005145",
+                        "on-primary-container": "#86ebd5",
+                        "on-secondary-fixed": "#001159",
+                        "secondary": "#2b4cda",
+                        "on-tertiary-fixed": "#00201d",
+                        "surface-container-high": "#e6e8e9",
+                        "secondary-fixed-dim": "#bac3ff",
+                        "on-surface": "#191c1d",
+                        "tertiary-fixed": "#70f8e8",
+                        "inverse-primary": "#73d8c3",
+                        "on-primary-fixed": "#00201b",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#005045",
+                        "surface-container-low": "#f2f4f5",
+                        "outline": "#6e7976",
+                        "on-secondary-container": "#fffbff",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#3e4946",
+                        "primary-container": "#006b5c",
+                        "background": "#f8fafb",
+                        "surface-bright": "#f8fafb",
+                        "primary-fixed-dim": "#73d8c3",
+                        "secondary-fixed": "#dee1ff",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eff1f2",
+                        "primary-fixed": "#8ff5df",
+                        "on-tertiary-container": "#66eedf",
+                        "tertiary-container": "#006b62",
+                        "surface-variant": "#e1e3e4",
+                        "on-background": "#191c1d",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface": "#f8fafb",
+                        "tertiary": "#00514a",
+                        "surface-container": "#eceeef"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #005145 0%, #006b5c 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col" data-mode="connect">
+<!-- Navigation Shell Suppression: Login page is transactional, so TopNavBar/SideNav/BottomNav are excluded per "Destination Rule" -->
+<main class="flex-grow flex items-center justify-center px-6 py-20 relative overflow-hidden">
+<!-- Background Editorial Elements -->
+<div class="absolute inset-0 z-0">
+<div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[80px]"></div>
+</div>
+<!-- Login Container -->
+<div class="w-full max-w-[480px] z-10">
+<!-- Brand Anchor -->
+<div class="text-center mb-10">
+<h1 class="font-headline text-3xl font-extrabold tracking-tighter text-primary mb-2" style="">Cura</h1>
+<p class="font-body text-on-surface-variant text-sm tracking-wide" style="">Precision nutrition for the modern expert.</p>
+</div>
+<!-- Card -->
+<div class="bg-surface-container-lowest rounded-[2rem] p-10 md:p-12 shadow-[0_10px_40px_rgba(25,28,29,0.04)] border border-outline-variant/10">
+<header class="mb-8">
+<h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface" style="">Welcome back</h2>
+<p class="text-on-surface-variant text-sm mt-1" style="">Please enter your clinical credentials</p>
+</header>
+<form class="space-y-6">
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="block text-xs font-semibold uppercase tracking-widest text-on-surface-variant ml-1" for="email" style="">Email Address</label>
+<div class="relative">
+<input class="w-full h-14 px-5 bg-surface-container-high border-none rounded-xl text-on-surface placeholder:text-outline focus:ring-2 focus:ring-secondary/30 transition-all outline-none" id="email" name="email" placeholder="dr.smith@clinicalcurator.com" type="email">
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-center px-1">
+<label class="block text-xs font-semibold uppercase tracking-widest text-on-surface-variant" for="password" style="">Password</label>
+<a class="text-xs font-medium text-secondary hover:text-primary transition-colors" href="#" style="">Forgot Password?</a>
+</div>
+<div class="relative">
+<input class="w-full h-14 px-5 bg-surface-container-high border-none rounded-xl text-on-surface placeholder:text-outline focus:ring-2 focus:ring-secondary/30 transition-all outline-none" id="password" name="password" placeholder="••••••••" type="password">
+</div>
+</div>
+<!-- Role Selection / Buttons -->
+<div class="pt-4 flex flex-col gap-3">
+<button class="editorial-gradient text-on-primary w-full h-14 rounded-full font-headline font-bold text-base shadow-lg shadow-primary/20 active:scale-[0.98] transition-all" type="submit" style="">
+                            Log in as Practitioner
+                        </button>
+<div class="flex items-center gap-4 py-2">
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+<span class="text-[10px] uppercase tracking-[0.2em] text-outline font-bold" style="">OR</span>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<button class="bg-secondary-fixed text-on-secondary-fixed w-full h-14 rounded-full font-headline font-bold text-base active:scale-[0.98] transition-all hover:bg-secondary-fixed-dim" type="button" style="">
+                            Log in as Client
+                        </button>
+</div>
+</form>
+<!-- Footer Link -->
+<div class="mt-10 text-center">
+<p class="text-sm text-on-surface-variant" style="">
+                        New to the ecosystem?<a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="#" style=""href="../clinical_curator_registration_and_login/code.html">Register Now</a></p>
+</div>
+</div>
+<!-- Security Badge -->
+<div class="mt-8 flex items-center justify-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">lock</span>
+<span class="text-[10px] font-semibold uppercase tracking-widest text-on-surface-variant" style="">End-to-End Clinical Encryption Active</span>
+</div>
+</div>
+</main>
+<!-- Contextual Footer (Light version of the Shared Component) -->
+<footer class="w-full py-12 px-8 bg-surface-container-low mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-screen-2xl mx-auto gap-6">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-headline font-bold text-primary tracking-tighter text-lg mb-2" style="">Cura</span>
+<p class="font-body text-[10px] md:text-xs tracking-wide text-on-surface-variant text-center md:text-left max-w-xs" style="">
+                    © 2024 Clinical Curator. All rights reserved. Precision nutrition for the modern expert.
+                </p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body text-xs tracking-wide text-outline hover:text-primary transition-opacity" href="#" style="">Privacy Policy</a>
+<a class="font-body text-xs tracking-wide text-outline hover:text-primary transition-opacity" href="#" style="">Terms of Service</a>
+<a class="font-body text-xs tracking-wide text-outline hover:text-primary transition-opacity" href="#" style="">Clinical Standards</a>
+<a class="font-body text-xs tracking-wide text-outline hover:text-primary transition-opacity" href="#" style="">Contact Support</a>
+</nav>
+</div>
+</footer>
+<!-- Image for decorative background context -->
+<div class="hidden">
+<img alt="" data-alt="Abstract botanical shapes with clean clinical laboratory textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa3VAKfwHlNzkqEKlgDMG6qbqMpnWua5_5fGUdf4ubqTFhgJeY_A2VsRAmiVD8FyIn6vxowFJFTL0sA1m4_bcr3_3dbG7i75svMEx4BtYxbaBg8Ha9Nqljyk7QUft7TyqPGqEJZsUXdm37RiWfo-Y5TgpmwZ6A-y9hFOAQmygsWiWQJQXMQIGAaaV8xK51emUwOXSjMO3q92-LysYaPAzMqhZbeuHtRl41bow9vIcZ4MO0eISdibV8ziBhKmMucZBEkFNj-dyMuI_5" class="" style="">
+</div>
+</body></html>

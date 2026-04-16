@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | Clinical Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#93000a",
+              "outline-variant": "#bec9c5",
+              "primary-fixed": "#8ff5df",
+              "on-tertiary-fixed": "#00201d",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#00514a",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#86ebd5",
+              "tertiary-container": "#006b62",
+              "on-primary-fixed": "#00201b",
+              "primary-container": "#006b5c",
+              "error": "#ba1a1a",
+              "on-background": "#191c1d",
+              "surface-container-high": "#e6e8e9",
+              "surface-container-low": "#f2f4f5",
+              "on-surface-variant": "#3e4946",
+              "on-secondary-container": "#fffbff",
+              "surface-variant": "#e1e3e4",
+              "background": "#f8fafb",
+              "tertiary-fixed-dim": "#4fdbcc",
+              "secondary-fixed-dim": "#bac3ff",
+              "outline": "#6e7976",
+              "surface-bright": "#f8fafb",
+              "surface-container-highest": "#e1e3e4",
+              "on-error": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-tertiary-container": "#66eedf",
+              "secondary-container": "#4967f4",
+              "on-tertiary-fixed-variant": "#005049",
+              "primary": "#005145",
+              "inverse-on-surface": "#eff1f2",
+              "surface-dim": "#d8dadb",
+              "inverse-surface": "#2e3132",
+              "secondary": "#2b4cda",
+              "on-surface": "#191c1d",
+              "surface-container": "#eceeef",
+              "primary-fixed-dim": "#73d8c3",
+              "tertiary-fixed": "#70f8e8",
+              "secondary-fixed": "#dee1ff",
+              "error-container": "#ffdad6",
+              "surface-tint": "#006b5c",
+              "surface": "#f8fafb",
+              "on-secondary-fixed": "#001159",
+              "on-secondary-fixed-variant": "#0031c4",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed-variant": "#005045",
+              "inverse-primary": "#73d8c3"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Public Sans"],
+              "label": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<nav class="bg-[#f8fafb]/80 dark:bg-slate-950/80 backdrop-blur-xl fixed top-0 w-full z-50 shadow-[0_10px_40px_rgba(25,28,29,0.06)]">
+<div class="flex justify-between items-center px-8 h-16 w-full max-w-screen-2xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-[#005145] dark:text-[#006b5c] font-headline">
+                Clinical Curator
+            </div>
+<div class="hidden md:flex items-center space-x-8 font-['Manrope'] tracking-tight font-semibold">
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#005145] transition-colors" href="../nutritionist_dashboard/nutrishionist-dashboard.html">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#005145] transition-colors" href="../client_meal_plan_tracking/client-meal.html">Meal Plan</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#005145] transition-colors" href="../meal_delivery_storefront/marketplace.html">Storefront</a>
+</div>
+<div class="flex items-center space-x-5">
+<button class="text-on-surface-variant hover:bg-[#f2f4f5] p-2 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-[#f2f4f5] p-2 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="User profile" data-alt="Professional male user portrait profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtwBYh2cSEjYl3TiVvqywApJl3S40-rF3OrX6HiRFhqY0Z6oq10Aiqdqh95-JlDOj1OVwX5zf4ZGZpewD5c4TfAvMhgLw4ggoFkcxQhN85R2eTVeEUpUL9J3bxpyu2u31d-fy9C3mJdFDlokjaiRg60GFaWYPUJUmaE1SwEtDuuR8iLXzETKYUxyYDtAO0qFva9-7Z9UVfcAS7GP787MCJw-_rgzSTkO4opl3pDJzwYIN-YsDBEl-m6QnwyhkcU63pwh2jKwjHPFYD"/>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<header class="mb-12">
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-primary mb-4">Complete Order</h1>
+<p class="text-on-surface-variant text-lg">Finalize your clinical nutrition plan for the week ahead.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-7 space-y-12">
+<section>
+<div class="flex items-center space-x-4 mb-8">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</div>
+<h2 class="font-headline text-2xl font-bold">Delivery Logistics</h2>
+</div>
+<div class="bg-surface-container-low rounded-xl p-8 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Full Name</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 focus:ring-2 focus:ring-secondary/30 text-on-surface" placeholder="Dr. Julian Thorne" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Phone Number</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 focus:ring-2 focus:ring-secondary/30 text-on-surface" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Delivery Address</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 focus:ring-2 focus:ring-secondary/30 text-on-surface" placeholder="1221 Medical Center Pkwy, Suite 400" type="text"/>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">City</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 focus:ring-2 focus:ring-secondary/30 text-on-surface" placeholder="San Francisco" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">State</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 focus:ring-2 focus:ring-secondary/30 text-on-surface" placeholder="CA" type="text"/>
+</div>
+<div class="col-span-2 md:col-span-1 space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Zip Code</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 focus:ring-2 focus:ring-secondary/30 text-on-surface" placeholder="94103" type="text"/>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center space-x-4 mb-8">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">2</div>
+<h2 class="font-headline text-2xl font-bold">Secure Payment</h2>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-on-background text-white flex items-center justify-center py-4 rounded-full font-bold hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span class="mr-2">Pay with</span>
+<span class="font-headline tracking-tighter text-xl"> Pay</span>
+</button>
+<div class="relative flex py-4 items-center">
+<div class="flex-grow border-t border-outline-variant/30"></div>
+<span class="flex-shrink mx-4 text-outline text-xs font-bold uppercase tracking-widest">Or pay with card</span>
+<div class="flex-grow border-t border-outline-variant/30"></div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-8 space-y-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Card Number</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 pr-12 focus:ring-2 focus:ring-secondary/30 text-on-surface" placeholder="0000 0000 0000 0000" type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline" data-icon="credit_card">credit_card</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">Expiry Date</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 focus:ring-2 focus:ring-secondary/30 text-on-surface" placeholder="MM / YY" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant ml-1">CVV</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 focus:ring-2 focus:ring-secondary/30 text-on-surface" placeholder="***" type="text"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<aside class="lg:col-span-5 sticky top-24">
+<div class="bg-surface-container-lowest rounded-2xl p-8 shadow-[0_20px_60px_rgba(25,28,29,0.04)] border border-outline-variant/10">
+<h3 class="font-headline text-xl font-bold mb-8">Order Summary</h3>
+<div class="space-y-6 mb-10">
+<div class="flex items-start justify-between">
+<div class="flex space-x-4">
+<div class="w-16 h-16 rounded-xl bg-surface-container overflow-hidden flex-shrink-0">
+<img alt="Clinical Meal 1" class="w-full h-full object-cover" data-alt="Overhead shot of a healthy salmon and asparagus meal bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa0M0_wb29fp7ZxiEI_Pleg9w20qKxxapIWhUvkg5khiyvQAIgPbLjad_XlztoSNOfka4ji0kSbphsqDtj2Fg87NoZm864a696dLSrfSmR6Nkf_9dXLKdUr0sPGoFmwhtOjDc2g-0ayP-jF-5t9VtppSNhLHj2Q29_yLYp3FjJxQsJ7bUzwom0o0WOGfTTQqIxijMPtBcLFsetG26k6hKxXNVw0_eOc798KJWShwS4B0MsPplHDouj1NaLvUxW3wgFZlrnPvEhsyBw"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Salmon &amp; Macro Bowl</p>
+<p class="text-xs text-on-surface-variant mt-1">Clinical Standard • 480kcal</p>
+<p class="text-sm font-medium mt-2">Qty: 3</p>
+</div>
+</div>
+<span class="font-bold">$54.00</span>
+</div>
+<div class="flex items-start justify-between">
+<div class="flex space-x-4">
+<div class="w-16 h-16 rounded-xl bg-surface-container overflow-hidden flex-shrink-0">
+<img alt="Clinical Meal 2" class="w-full h-full object-cover" data-alt="Fresh vibrant kale and quinoa power salad" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFlujsl1TilsZ72LVf_FB0k05I2QkiC6NWRfpcIFulzQPosQDdiZT_X-7X4vNjwR3JE5qW8Yl9OdmSK14A_kBaShrs3s9cy_TuHZKoact7Ig_90-DCMOqFkg__Ig50Obep_5P3fsEGiE2I5e9F-59ZWJkVwdgJxF3-Y-_W2CX_RRlvlBssxhCEpHJCWBSrnknvNssyneV_xCfjmKIIFvYiyDAv0QhbuSberi3fqi0jcTkSuLLrWl9PrvLWUpwDc-afSvnHHVu1R_Kl"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Post-Op Recovery Salad</p>
+<p class="text-xs text-on-surface-variant mt-1">Anti-Inflammatory • 320kcal</p>
+<p class="text-sm font-medium mt-2">Qty: 2</p>
+</div>
+</div>
+<span class="font-bold">$38.00</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 mb-8">
+<div class="flex items-center space-x-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+<span class="font-bold text-sm uppercase tracking-wider text-primary">Estimated Delivery</span>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-2xl font-extrabold font-headline">Tomorrow</p>
+<p class="text-sm text-on-surface-variant">10:30 AM — 12:00 PM</p>
+</div>
+<div class="text-right">
+<div class="h-1.5 w-24 bg-outline-variant/30 rounded-full overflow-hidden relative">
+<div class="absolute inset-0 bg-primary w-1/3 rounded-full"></div>
+</div>
+<p class="text-[10px] uppercase font-bold text-primary mt-2">Preparing Order</p>
+</div>
+</div>
+</div>
+<div class="space-y-3 pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal</span>
+<span>$92.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Clinical Delivery Fee</span>
+<span>$8.50</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Estimated Tax</span>
+<span>$7.36</span>
+</div>
+<div class="flex justify-between items-end pt-4">
+<span class="text-lg font-bold">Total Amount</span>
+<span class="text-3xl font-extrabold font-headline text-primary">$107.86</span>
+</div>
+</div>
+<button class="w-full mt-10 bg-gradient-to-r from-primary to-primary-container text-white py-5 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all active:scale-[0.98]">
+                        Complete Secure Purchase
+                    </button>
+<div class="flex items-center justify-center space-x-2 mt-6 text-outline text-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>256-bit SSL Secure Encryption</span>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<div class="md:hidden">
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-end px-6 pb-6 pt-2 bg-[#f8fafb]/90 dark:bg-slate-950/90 backdrop-blur-md z-50 shadow-[0_-10px_40px_rgba(25,28,29,0.06)] rounded-t-[2rem]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#005145] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Public_Sans'] text-[10px] uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#005145] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="reusable_directions_run">directions_run</span>
+<span class="font-['Public_Sans'] text-[10px] uppercase tracking-widest">Meals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#005145] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="local_mall">local_mall</span>
+<span class="font-['Public_Sans'] text-[10px] uppercase tracking-widest">Store</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#005145] text-white rounded-full p-3 mb-2 scale-110 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</a>
+</nav>
+</div>
+</body></html>
